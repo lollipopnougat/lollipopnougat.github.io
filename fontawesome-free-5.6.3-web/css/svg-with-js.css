@@ -97,8 +97,7 @@ svg:not(:root).svg-inline--fa {
 .fa-layers-counter {
   background-color: #ff253a;
   border-radius: 1em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #fff;
   height: 1.5em;
   line-height: 1;
