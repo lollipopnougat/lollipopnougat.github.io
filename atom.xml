@@ -6,7 +6,7 @@
   <link href="/Crepeblog/atom.xml" rel="self"/>
   
   <link href="https://crepe.coding.me/Crepeblog/"/>
-  <updated>2019-01-27T11:28:59.656Z</updated>
+  <updated>2019-01-27T15:46:11.720Z</updated>
   <id>https://crepe.coding.me/Crepeblog/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://crepe.coding.me/Crepeblog/2019/01/25/HTML%20(%E4%B8%80)/"/>
     <id>https://crepe.coding.me/Crepeblog/2019/01/25/HTML (一)/</id>
     <published>2019-01-25T13:36:08.000Z</published>
-    <updated>2019-01-27T11:28:59.656Z</updated>
+    <updated>2019-01-27T15:46:11.720Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML 指超文本标记语言</p><blockquote><p>HTML 是通向 WEB 技术世界的钥匙。</p></blockquote><a id="more"></a><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>HTML是现在世界通用的超文本标记语言，通过它，可以实现图片、链接、音乐以及程序等等多种元素。<br>现如今，HTML已经是程序员必须掌握的一项基本功。</p><h2 id="HTML发展史"><a href="#HTML发展史" class="headerlink" title="HTML发展史"></a>HTML发展史</h2><p>HTML没有1.0，因为关于它的初版存在争议，1995年HTML 2.0面世，<br>1997年由国际官方组织W3C推出了HTML 3.2以及HTML 4.0标准，<br>后面W3C(万维网联盟)也渐渐变成Web技术领域的权威，经过漫长的演变，2014年，HTML 5标准最终面世。</p><blockquote><p><em>HTML 2.0——1995年11月，RFC 1866发布</em>HTML 3.2——1997年1月14日，W3C发布推荐标准<br><em>HTML 4.0——1997年12月18日，W3C发布推荐标准</em>HTML 4.01——1999年12月24日，W3C发布推荐标准<br>*HTML 5——2014年10月28日，W3C发布推荐标准</p></blockquote><h2 id="HTML5编辑规范"><a href="#HTML5编辑规范" class="headerlink" title="HTML5编辑规范"></a>HTML5编辑规范</h2><ol><li>文件拓展名默认使用htm或者html，便于操作系统或者程序辨认文件，而图片则基本上存为gif或jpg</li><li>浏览器默认忽视回车符，不过为了方便阅览，人们还是会习惯地在写完一段代码后进行回车</li><li>标记符号用尖括号括起来，带斜杠的元素表示该标记说明结束，大多数标记符必须成对使用，用以说明起始和结束。</li><li>必须使用半角而不是全角字符</li><li>HTML注释<code>&lt;!--注释内容--&gt;</code>的内容不给予显示。</li></ol><h2 id="这是笔者写的较为详细的一个入门页面"><a href="#这是笔者写的较为详细的一个入门页面" class="headerlink" title="这是笔者写的较为详细的一个入门页面"></a>这是笔者写的较为详细的一个入门页面</h2><p><a href="https://cdn.jsdelivr.net/gh/lollipopnougat/website-calculator/html/HTML1.html" target="_blank" rel="noopener">HTML入门·一</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML 指超文本标记语言</p><blockquote><p>HTML 是通向 WEB 技术世界的钥匙。</p></blockquote><a id="more"></a><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>HTML是现在世界通用的超文本标记语言，通过它，可以实现图片、链接、音乐以及程序等等多种元素。<br>现如今，HTML已经是程序员必须掌握的一项基本功。</p><h2 id="HTML发展史"><a href="#HTML发展史" class="headerlink" title="HTML发展史"></a>HTML发展史</h2><p>HTML没有1.0，因为关于它的初版存在争议，1995年HTML 2.0面世，<br>1997年由国际官方组织W3C推出了HTML 3.2以及HTML 4.0标准，<br>后面W3C(万维网联盟)也渐渐变成Web技术领域的权威，经过漫长的演变，2014年，HTML 5标准最终面世。</p><blockquote><p><em>HTML 2.0——1995年11月，RFC 1866发布</em>HTML 3.2——1997年1月14日，W3C发布推荐标准<br><em>HTML 4.0——1997年12月18日，W3C发布推荐标准</em>HTML 4.01——1999年12月24日，W3C发布推荐标准<br>*HTML 5——2014年10月28日，W3C发布推荐标准</p></blockquote><h2 id="HTML5编辑规范"><a href="#HTML5编辑规范" class="headerlink" title="HTML5编辑规范"></a>HTML5编辑规范</h2><ol><li>文件拓展名默认使用htm或者html，便于操作系统或者程序辨认文件，而图片则基本上存为gif或jpg</li><li>浏览器默认忽视回车符，不过为了方便阅览，人们还是会习惯地在写完一段代码后进行回车</li><li>标记符号用尖括号括起来，带斜杠的元素表示该标记说明结束，大多数标记符必须成对使用，用以说明起始和结束。</li><li>必须使用半角而不是全角字符</li><li>HTML注释<code>&lt;!--注释内容--&gt;</code>的内容不给予显示。</li></ol><h2 id="这是笔者写的较为详细的一个入门页面"><a href="#这是笔者写的较为详细的一个入门页面" class="headerlink" title="这是笔者写的较为详细的一个入门页面"></a>这是笔者写的较为详细的一个入门页面</h2><p><a href="https://lollipopnougat.github.io/website-calculator/html/HTML1.html" target="_blank" rel="noopener">HTML入门·一</a></p>]]></content>
     
     <summary type="html">
     
