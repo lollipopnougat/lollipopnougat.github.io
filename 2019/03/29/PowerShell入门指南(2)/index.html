@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>HTML (一) | Frank</title>
+  <title>PowerShell入门指南(2) | Frank</title>
   
   
 
@@ -182,13 +182,13 @@
   <div class="meta" id="header-meta">
     
       
-          <h1 class="title">HTML (一)</h1>
+          <h1 class="title">PowerShell入门指南(2)</h1>
       
     
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-01-25
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-29
       </time>
     
 
@@ -210,36 +210,205 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML 指超文本标记语言</p>
-<blockquote>
-<p>HTML 是通向 WEB 技术世界的钥匙。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>HTML是现在世界通用的超文本标记语言，通过它，可以实现图片、链接、音乐以及程序等等多种元素。<br>现如今，HTML已经是程序员必须掌握的一项基本功。</p>
-<h2 id="HTML发展史"><a href="#HTML发展史" class="headerlink" title="HTML发展史"></a>HTML发展史</h2><p>HTML没有1.0，因为关于它的初版存在争议，1995年HTML 2.0面世，<br>1997年由国际官方组织W3C推出了HTML 3.2以及HTML 4.0标准，<br>后面W3C(万维网联盟)也渐渐变成Web技术领域的权威，经过漫长的演变，2014年，HTML 5标准最终面世。</p>
-<blockquote>
-<p><em>HTML 2.0——1995年11月，RFC 1866发布
-</em>HTML 3.2——1997年1月14日，W3C发布推荐标准<br><em>HTML 4.0——1997年12月18日，W3C发布推荐标准
-</em>HTML 4.01——1999年12月24日，W3C发布推荐标准<br>*HTML 5——2014年10月28日，W3C发布推荐标准</p>
-</blockquote>
-<h2 id="HTML5编辑规范"><a href="#HTML5编辑规范" class="headerlink" title="HTML5编辑规范"></a>HTML5编辑规范</h2><ol>
-<li>文件拓展名默认使用htm或者html，便于操作系统或者程序辨认文件，而图片则基本上存为gif或jpg</li>
-<li>浏览器默认忽视回车符，不过为了方便阅览，人们还是会习惯地在写完一段代码后进行回车</li>
-<li>标记符号用尖括号括起来，带斜杠的元素表示该标记说明结束，大多数标记符必须成对使用，用以说明起始和结束。</li>
-<li>必须使用半角而不是全角字符</li>
-<li>HTML注释<code>&lt;!--注释内容--&gt;</code>的内容不给予显示。</li>
-</ol>
-<h2 id="这是笔者写的较为详细的一个入门页面"><a href="#这是笔者写的较为详细的一个入门页面" class="headerlink" title="这是笔者写的较为详细的一个入门页面"></a>这是笔者写的较为详细的一个入门页面</h2><p><a href="https://lollipopnougat.github.io/website-calculator/html/HTML1.html" target="_blank" rel="noopener">HTML入门·一</a></p>
+        <h1 id="PowerShell入门指南-二-·挑战CMD和Bash的PowerShell"><a href="#PowerShell入门指南-二-·挑战CMD和Bash的PowerShell" class="headerlink" title="PowerShell入门指南(二)·挑战CMD和Bash的PowerShell"></a>PowerShell入门指南(二)·挑战CMD和Bash的PowerShell</h1><h2 id="作为CMD-Bash的代替使用"><a href="#作为CMD-Bash的代替使用" class="headerlink" title="作为CMD/Bash的代替使用"></a>作为CMD/Bash的代替使用</h2><p>如果你想把PowerShell当作原来的CMD命令行使用是完全可以的，甚至还有部分Bash的语法可以使用<br><a id="more"></a></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>PowerShell 命令</th>
+<th>PowerShell 简称</th>
+<th>CMD 命令</th>
+<th>UNIX 命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get-ChildItem</td>
+<td>gci,dir,ls</td>
+<td>dir</td>
+<td>ls</td>
+<td>显示当前目录下的所有文件和文件夹</td>
+</tr>
+<tr>
+<td>Test-Connection</td>
+<td>ping</td>
+<td>ping</td>
+<td>ping</td>
+<td>向目标站点发送一个ICMP接受响应，检查网络连通性</td>
+</tr>
+<tr>
+<td>Get-Content</td>
+<td>gc,type,cat</td>
+<td>type</td>
+<td>cat</td>
+<td>获取文件内容</td>
+</tr>
+<tr>
+<td>Get-Command</td>
+<td>gcm</td>
+<td>help</td>
+<td>type, which, compgen</td>
+<td>列出可用的命令</td>
+</tr>
+<tr>
+<td>Get-Help</td>
+<td>help,man</td>
+<td>help</td>
+<td>apropos,man</td>
+<td>在控制台列出命令的使用文档</td>
+</tr>
+<tr>
+<td>Clear-Host</td>
+<td>cls,clear</td>
+<td>cls</td>
+<td>clear</td>
+<td>清除屏幕内容</td>
+</tr>
+<tr>
+<td>Copy-Item</td>
+<td>cpi,copy,cp</td>
+<td>copy,xcopy,robocopy</td>
+<td>cp</td>
+<td>拷贝文件/文件夹到指定位置</td>
+</tr>
+<tr>
+<td>Move-Item</td>
+<td>mi,move,mv</td>
+<td>move</td>
+<td>mv</td>
+<td>移动文件/文件夹到新位置</td>
+</tr>
+<tr>
+<td>Remove-Item</td>
+<td>ri,del,erase,rmdir,rd,rm</td>
+<td>del,erase,rmdir,rd</td>
+<td>rm,rmdir</td>
+<td>删除文件/文件夹</td>
+</tr>
+<tr>
+<td>Rename-Item</td>
+<td>rni,ren,mv</td>
+<td>ren,rename</td>
+<td>mv</td>
+<td>重命名文件/文件夹</td>
+</tr>
+<tr>
+<td>Get-Location</td>
+<td>gl,cd,pwd</td>
+<td>cd</td>
+<td>pwd</td>
+<td>显示当前工作目录</td>
+</tr>
+<tr>
+<td>Pop-Location</td>
+<td>popd</td>
+<td>popd</td>
+<td>popd</td>
+<td>将工作路径更改为最近压入堆栈的位置</td>
+</tr>
+<tr>
+<td>Push-Location</td>
+<td>pushd</td>
+<td>pushd</td>
+<td>pushd</td>
+<td>将工作路径存储到堆栈上</td>
+</tr>
+<tr>
+<td>Set-Location</td>
+<td>sl,cd,chdir</td>
+<td>cd,chdir</td>
+<td>cd</td>
+<td>更改当前工作目录</td>
+</tr>
+<tr>
+<td>Tee-Object</td>
+<td>tee</td>
+<td>不支持</td>
+<td>tee</td>
+<td>将输入通过管道传递到文件或变量</td>
+</tr>
+<tr>
+<td>Write-Output</td>
+<td>echo,write</td>
+<td>echo</td>
+<td>echo</td>
+<td>将字符或其他对象输出到标准输出流上</td>
+</tr>
+<tr>
+<td>Get-Process</td>
+<td>gps,ps</td>
+<td>tlist,tasklist</td>
+<td>ps</td>
+<td>列出当前全部进程</td>
+</tr>
+<tr>
+<td>Stop-Process</td>
+<td>spps,kill</td>
+<td>kill,taskkill</td>
+<td>kill</td>
+<td>终止指定进程</td>
+</tr>
+<tr>
+<td>Select-String</td>
+<td>sls</td>
+<td>findstr</td>
+<td>find,grep</td>
+<td>打印匹配的字符行</td>
+</tr>
+<tr>
+<td>Set-Variable</td>
+<td>sv,set</td>
+<td>set</td>
+<td>env,export,set,setenv</td>
+<td>创建或更改环境变量的内容</td>
+</tr>
+<tr>
+<td>Invoke-WebRequest</td>
+<td>iwr,<del>curl,wget</del>[^1]</td>
+<td>不支持</td>
+<td>wget,curl</td>
+<td>从Internet上的网页获取内容</td>
+</tr>
+</tbody>
+</table>
+<p>[^1]:curl和wget不在PowerShell Core中，因此不会干扰调用非Windows操作系统的同名组件。</p>
+<hr>
+<h2 id="功能键和快捷键"><a href="#功能键和快捷键" class="headerlink" title="功能键和快捷键"></a>功能键和快捷键</h2><h4 id="先来了解一下功能键和快捷键"><a href="#先来了解一下功能键和快捷键" class="headerlink" title="先来了解一下功能键和快捷键"></a>先来了解一下功能键和快捷键</h4><ul>
+<li><kbd>ALT</kbd>+<kbd>F7</kbd>    清除命令的历史记录</li>
+<li><kbd>PgUp</kbd> <kbd>PgDn</kbd>    显示当前会话的第一个命令和最后一个命令</li>
+<li><kbd>Enter</kbd>    执行当前命令</li>
+<li><kbd>End</kbd>    将光标移至当前命令的末尾</li>
+<li><kbd>Del</kbd>    从右开始删除输入的命令字符</li>
+<li><kbd>Esc</kbd>    清空当前命令行</li>
+<li><kbd>F2</kbd>    自动补充历史命令至指定字符<br>(例如历史记录中存在Get-Process，按<kbd>F2</kbd>，提示”Enter char to copy up to”，键入 <kbd>S</kbd>，自动补齐命令:Get-Proce)</li>
+<li><kbd>F4</kbd>    删除命令行至光标右边指定字符处</li>
+<li><kbd>F7</kbd>    对话框显示命令行历史记录</li>
+<li><kbd>F8</kbd>    检索包含指定字符的命令行历史记录</li>
+<li><kbd>F9</kbd>    根据命令行的历史记录编号选择命令，历史记录编号可以通过F7查看</li>
+<li><kbd>←</kbd>/<kbd>→</kbd>    左右移动光标</li>
+<li><kbd>↑</kbd>/<kbd>↓</kbd>    切换命令行的历史记录</li>
+<li><kbd>Home</kbd>    光标移至命令行最左端</li>
+<li><kbd>Backspace</kbd>    从右删除命令行字符</li>
+<li><kbd>Ctrl</kbd>+<kbd>C</kbd>    取消正在执行的命令</li>
+<li><kbd>Ctrl</kbd>+<kbd>←</kbd>/<kbd>→</kbd>    在单词之间移动光标</li>
+<li><kbd>Ctrl</kbd>+<kbd>Home</kbd>    删除光标最左端的所有字符</li>
+<li><kbd>Tab</kbd>    自动补齐命令或者文件名<h2 id="数值计算"><a href="#数值计算" class="headerlink" title="数值计算"></a>数值计算</h2>我们可以把powershell当成一个计算器。象键入命令行那样输入数学表达式，回车，powershell会自动计算并把结果输出。常用的加减乘除模（+,-,*,/,%）运算和小括号表达式都支持。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PS C:/pstest&gt; <span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line">PS C:/pstest&gt; <span class="number">0</span>xABCD</span><br><span class="line"><span class="number">43981</span></span><br><span class="line">PS C:/pstest&gt; <span class="number">3.14</span>*<span class="number">10</span>*<span class="number">10</span></span><br><span class="line"><span class="number">314</span></span><br><span class="line">PS C:/pstest&gt; <span class="number">1</span>+<span class="number">3</span>-(<span class="number">2.4</span>-<span class="number">5</span>)*(<span class="number">7.899</span>-<span class="number">4.444</span>)</span><br><span class="line"><span class="number">12.983</span></span><br></pre></td></tr></table></figure>
+<p>PowerShell也能自动识别计算机容量单位,包括KB，MB，GB，TB，PB</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PS C:/pstest&gt; <span class="number">1</span>pb/<span class="number">1</span>tb</span><br><span class="line"><span class="number">1024</span></span><br><span class="line">PS C:/pstest&gt; <span class="number">1</span>tb/<span class="number">1</span>gb</span><br><span class="line"><span class="number">1024</span></span><br><span class="line">PS C:/pstest&gt; <span class="number">1</span>gb/<span class="number">1</span>kb</span><br><span class="line"><span class="number">1048576</span></span><br><span class="line">PS C:/pstest&gt; <span class="number">1</span>gb/<span class="number">20</span>mb*<span class="number">10</span>kb</span><br><span class="line"><span class="number">524288</span></span><br></pre></td></tr></table></figure>
+<p>假如一个网站的每天人均PV操作为5，页面大小为80Kb，主机提供商限制的总流量为10G，那平均每天的最大访客数为：<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS C:/pstest&gt; <span class="number">10</span>GB/(<span class="number">80</span>KB*<span class="number">5</span>)/<span class="number">30</span></span><br><span class="line"><span class="number">873.813333333333</span></span><br></pre></td></tr></table></figure></p>
 
       </div>
         
           <section class="meta" id="footer-meta">
-            <time class="metatag time" itemprop="dateUpdated" datetime="2019-02-11T20:59:58+08:00" content="2019-02-11"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
-              &nbsp;2019-02-11
+            <time class="metatag time" itemprop="dateUpdated" datetime="2019-03-29T14:44:09+08:00" content="2019-03-29"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
+              &nbsp;2019-03-29
             </time>
             
                 
-                <div class="metatag tags"><a class="tag" href="/Crepeblog/tags/HTML/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;HTML</a></div>
+                <div class="metatag tags"><a class="tag" href="/Crepeblog/tags/PowerShell/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;PowerShell</a></div>
             
             
           </section>
@@ -248,33 +417,14 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                            <h4>
-                                <a href="/Crepeblog/2019/02/04/春节快乐/" rel="prev" title="春节快乐">
-                                  
-                                      春节快乐
-                                  
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/Crepeblog/tags/节日祝福/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>节日祝福</a> <a class="tag" href="/Crepeblog/tags/春节/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>春节</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/Crepeblog/2019/01/17/PowerShell (一)/" rel="prev" title="PowerShell (一)">
+                                <a href="/Crepeblog/2019/03/29/PowerShell入门指南1/" rel="prev" title="PowerShell入门指南(1)">
                                     
-                                        PowerShell (一)
+                                        PowerShell入门指南(1)
                                     
                                 </a>
                             </h4>
@@ -317,9 +467,9 @@
             
                 <li><a href="https://crepe.coding.me/Crepeblog/2019/02/04/春节快乐/">春节快乐</a></li>
             
-                <li><a href="https://crepe.coding.me/Crepeblog/2019/01/17/PowerShell (一)/">PowerShell (一)</a></li>
+                <li><a href="https://crepe.coding.me/Crepeblog/2019/01/25/HTML (一)/">HTML (一)</a></li>
             
-                <li><a href="https://crepe.coding.me/Crepeblog/2019/01/01/元旦快乐/">元旦快乐</a></li>
+                <li><a href="https://crepe.coding.me/Crepeblog/2019/01/17/PowerShell (一)/">PowerShell (一)</a></li>
             
         </ul>
     </div>
@@ -348,7 +498,7 @@
 
 <script>
     window.subData = {
-        title: 'HTML (一)',
+        title: 'PowerShell入门指南(2)',
         tools: true
     }
 </script>
@@ -581,7 +731,7 @@
 </header>
 
     <div class="content pure">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML发展史"><span class="toc-text">HTML发展史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5编辑规范"><span class="toc-text">HTML5编辑规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这是笔者写的较为详细的一个入门页面"><span class="toc-text">这是笔者写的较为详细的一个入门页面</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PowerShell入门指南-二-·挑战CMD和Bash的PowerShell"><span class="toc-text">PowerShell入门指南(二)·挑战CMD和Bash的PowerShell</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作为CMD-Bash的代替使用"><span class="toc-text">作为CMD/Bash的代替使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能键和快捷键"><span class="toc-text">功能键和快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#先来了解一下功能键和快捷键"><span class="toc-text">先来了解一下功能键和快捷键</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数值计算"><span class="toc-text">数值计算</span></a></li></ol>
     </div>
   </section>
 
