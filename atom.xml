@@ -6,7 +6,7 @@
   <link href="/Crepeblog/atom.xml" rel="self"/>
   
   <link href="https://crepe.coding.me/Crepeblog/"/>
-  <updated>2019-08-05T06:53:02.066Z</updated>
+  <updated>2019-09-06T16:00:45.164Z</updated>
   <id>https://crepe.coding.me/Crepeblog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络安全协会网站的搭建(一)</title>
+    <link href="https://crepe.coding.me/Crepeblog/2019/09/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E4%BC%9A%E7%BD%91%E7%AB%99%E7%9A%84%E6%90%AD%E5%BB%BA(1)/"/>
+    <id>https://crepe.coding.me/Crepeblog/2019/09/06/网络安全协会网站的搭建(1)/</id>
+    <published>2019-09-06T15:20:37.000Z</published>
+    <updated>2019-09-06T16:00:45.164Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="网络安全协会网站的搭建"><a href="#网络安全协会网站的搭建" class="headerlink" title="网络安全协会网站的搭建"></a>网络安全协会网站的搭建</h2><p>一个网络安全协会要体现自己的特色，必须要有自己的网站才行啊<br>特别是看了ACM协会的网站之后，更加坚定了开发的想法<br>所以<a href="https://github.com/lollipopnougat/chdns" target="_blank" rel="noopener">这个</a>项目就出现了</p><p><a href="https://chdans.github.io" target="_blank" rel="noopener">网站预览</a></p><a id="more"></a><h2 id="Vue-js-与-Node-js"><a href="#Vue-js-与-Node-js" class="headerlink" title="Vue.js 与 Node.js"></a>Vue.js 与 Node.js</h2><blockquote><p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p></blockquote><p>早就在关注尤雨溪大佬和他的<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">Vue.js</a>项目。</p><p>今年年初曾尝试搞了一个demo，结果最后搞的一头雾水，也没弄懂…<br>最终结果就是弃了…</p><p>直到今年5月份我准备做数据库课设，才算稍微系统地学习了一下 <code>Node.js</code>，用 <code>Express</code> 熟悉了一下 <code>Node</code> 的项目结构和使用 <code>npm</code> 的方法，顺便提高了js的开发能力。我也学到了 <code>js</code> 的异步回调什么的，还有编写 <code>HTML</code> 和 <code>CSS</code> 的熟练度也得到了少许提高，暑假时又学习了一部分 <code>TypeScript</code> 和 <code>ES6</code> 的语法，勉强算是做了较多的铺垫。</p><p>这两天重新看 <code>vue</code> 的项目的时候终于明白那都是什么东西了，有点 <code>Express</code> 的感觉，但是 <code>router</code> 竟然可以 build 成静态的，默认采用的是 <code>Hash</code> 方式，一个网站可以做成单页的，有趣啊！</p><p>于是9月1日建立了项目仓库，9月3日提交了研究了两天的结果(一个 <code>Header</code> )，因为将来要放到新GitHub账号上，build出来的静态文件有开 Http 服务的要求，因此我专门开了我GitHub的托管根目录做预览，这周前前后后一共提交了7次，之后就正式迁移到 <a href="https://chdans.github.io" target="_blank" rel="noopener">chdans.github.io</a> 了，我修改了结构，我build好的项目提交到我fork出来的 chdans 创建的那个静态页项目下，然后再新建 <code>Pull Request</code>，提交到 chdans，再由 chdans来 <code>Merge</code> 请求，这就是一次完整的更新。</p><p>不得不说<a href="https://element.eleme.io" target="_blank" rel="noopener">element ui</a>做的真的既简介又漂亮，原版的配色我是很喜欢的，我一度把协会的宣传海报也采用相同配色，如图<br><img src="https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/neoposter.png" alt="海报"></p><p>之后会详细解释这个网站项目</p><p>今天就写这么多，明天还要迎新，7点就要去…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;网络安全协会网站的搭建&quot;&gt;&lt;a href=&quot;#网络安全协会网站的搭建&quot; class=&quot;headerlink&quot; title=&quot;网络安全协会网站的搭建&quot;&gt;&lt;/a&gt;网络安全协会网站的搭建&lt;/h2&gt;&lt;p&gt;一个网络安全协会要体现自己的特色，必须要有自己的网站才行啊&lt;br&gt;特别是看了ACM协会的网站之后，更加坚定了开发的想法&lt;br&gt;所以&lt;a href=&quot;https://github.com/lollipopnougat/chdns&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这个&lt;/a&gt;项目就出现了&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://chdans.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;网站预览&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Vue.js" scheme="https://crepe.coding.me/Crepeblog/tags/Vue-js/"/>
+    
+      <category term="网站搭建" scheme="https://crepe.coding.me/Crepeblog/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="网络安全协会" scheme="https://crepe.coding.me/Crepeblog/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E4%BC%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>PowerShell入门指南(3)</title>
@@ -42,7 +67,7 @@
     <link href="https://crepe.coding.me/Crepeblog/2019/04/30/%E8%AE%B0%E4%B8%80%E6%AC%A1express%E5%90%8E%E7%AB%AF%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
     <id>https://crepe.coding.me/Crepeblog/2019/04/30/记一次express后端的搭建/</id>
     <published>2019-04-30T12:21:25.000Z</published>
-    <updated>2019-07-29T10:31:05.693Z</updated>
+    <updated>2019-09-06T15:22:27.497Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>作为网工人怎么能不会搭后端呢？<br>今天就拿Node.js下的Express搭一个后端<br>(最终变成课设了233…)</p><a id="more"></a><h2 id="Node-js是什么东西"><a href="#Node-js是什么东西" class="headerlink" title="Node.js是什么东西"></a>Node.js是什么东西</h2><p>你可能没听说过 <code>Node.js</code>，但是应该听说过 <code>JavaScript</code>，你也应该知道 <code>Chrome</code>(谷歌浏览器) 吧</p><blockquote><p><code>Node.js</code> 是一个基于 <code>Chrome V8</code> 引擎的 <code>JavaScript</code> 运行环境。<br><br><code>Node.js</code> 使用了一个事件驱动、非阻塞式 <code>I/O</code> 的模型，使其轻量又高效。</p></blockquote><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><code>Node</code> 是一个让 <code>JavaScript</code> 运行在服务端的开发平台，它让 <code>JavaScript</code> 成为与<code>PHP</code>、<code>Python</code>、<code>Perl</code>、<code>Ruby</code> 等服务端语言平起平坐的脚本语言。它发布于2009年5月，由 Ryan Dahl 开发，实质是对Chrome V8引擎进行了封装(底层调用C/C++的相关库)。<br>Node对一些特殊用例进行优化，提供替代的API，使得V8在非浏览器环境下运行得更好。V8引擎执行Javascript的速度非常快，性能非常好。Node是一个基于Chrome JavaScript运行时建立的平台， 用于方便地搭建响应速度快、易于扩展的网络应用。Node 使用事件驱动， 非阻塞I/O 模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用。</p>]]></content>
     
@@ -53,9 +78,11 @@
     </summary>
     
     
-      <category term="node.js" scheme="https://crepe.coding.me/Crepeblog/tags/node-js/"/>
+      <category term="网站搭建" scheme="https://crepe.coding.me/Crepeblog/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
-      <category term="express" scheme="https://crepe.coding.me/Crepeblog/tags/express/"/>
+      <category term="Node.js" scheme="https://crepe.coding.me/Crepeblog/tags/Node-js/"/>
+    
+      <category term="Express" scheme="https://crepe.coding.me/Crepeblog/tags/Express/"/>
     
       <category term="后端" scheme="https://crepe.coding.me/Crepeblog/tags/%E5%90%8E%E7%AB%AF/"/>
     

@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>网络安全协会网站的搭建(一)</title>
+      <link href="/Crepeblog/2019/09/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E4%BC%9A%E7%BD%91%E7%AB%99%E7%9A%84%E6%90%AD%E5%BB%BA(1)/"/>
+      <url>/Crepeblog/2019/09/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E4%BC%9A%E7%BD%91%E7%AB%99%E7%9A%84%E6%90%AD%E5%BB%BA(1)/</url>
+      
+        <content type="html"><![CDATA[<h2 id="网络安全协会网站的搭建"><a href="#网络安全协会网站的搭建" class="headerlink" title="网络安全协会网站的搭建"></a>网络安全协会网站的搭建</h2><p>一个网络安全协会要体现自己的特色，必须要有自己的网站才行啊<br>特别是看了ACM协会的网站之后，更加坚定了开发的想法<br>所以<a href="https://github.com/lollipopnougat/chdns" target="_blank" rel="noopener">这个</a>项目就出现了</p><p><a href="https://chdans.github.io" target="_blank" rel="noopener">网站预览</a></p><a id="more"></a><h2 id="Vue-js-与-Node-js"><a href="#Vue-js-与-Node-js" class="headerlink" title="Vue.js 与 Node.js"></a>Vue.js 与 Node.js</h2><blockquote><p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p></blockquote><p>早就在关注尤雨溪大佬和他的<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">Vue.js</a>项目。</p><p>今年年初曾尝试搞了一个demo，结果最后搞的一头雾水，也没弄懂…<br>最终结果就是弃了…</p><p>直到今年5月份我准备做数据库课设，才算稍微系统地学习了一下 <code>Node.js</code>，用 <code>Express</code> 熟悉了一下 <code>Node</code> 的项目结构和使用 <code>npm</code> 的方法，顺便提高了js的开发能力。我也学到了 <code>js</code> 的异步回调什么的，还有编写 <code>HTML</code> 和 <code>CSS</code> 的熟练度也得到了少许提高，暑假时又学习了一部分 <code>TypeScript</code> 和 <code>ES6</code> 的语法，勉强算是做了较多的铺垫。</p><p>这两天重新看 <code>vue</code> 的项目的时候终于明白那都是什么东西了，有点 <code>Express</code> 的感觉，但是 <code>router</code> 竟然可以 build 成静态的，默认采用的是 <code>Hash</code> 方式，一个网站可以做成单页的，有趣啊！</p><p>于是9月1日建立了项目仓库，9月3日提交了研究了两天的结果(一个 <code>Header</code> )，因为将来要放到新GitHub账号上，build出来的静态文件有开 Http 服务的要求，因此我专门开了我GitHub的托管根目录做预览，这周前前后后一共提交了7次，之后就正式迁移到 <a href="https://chdans.github.io" target="_blank" rel="noopener">chdans.github.io</a> 了，我修改了结构，我build好的项目提交到我fork出来的 chdans 创建的那个静态页项目下，然后再新建 <code>Pull Request</code>，提交到 chdans，再由 chdans来 <code>Merge</code> 请求，这就是一次完整的更新。</p><p>不得不说<a href="https://element.eleme.io" target="_blank" rel="noopener">element ui</a>做的真的既简介又漂亮，原版的配色我是很喜欢的，我一度把协会的宣传海报也采用相同配色，如图<br><img src="https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/neoposter.png" alt="海报"></p><p>之后会详细解释这个网站项目</p><p>今天就写这么多，明天还要迎新，7点就要去…</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vue.js </tag>
+            
+            <tag> 网站搭建 </tag>
+            
+            <tag> 网络安全协会 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PowerShell入门指南(3)</title>
       <link href="/Crepeblog/2019/07/29/PowerShell%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97(3)/"/>
       <url>/Crepeblog/2019/07/29/PowerShell%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97(3)/</url>
@@ -33,9 +56,11 @@
       
         <tags>
             
-            <tag> node.js </tag>
+            <tag> 网站搭建 </tag>
             
-            <tag> express </tag>
+            <tag> Node.js </tag>
+            
+            <tag> Express </tag>
             
             <tag> 后端 </tag>
             

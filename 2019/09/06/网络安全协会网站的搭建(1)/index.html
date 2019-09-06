@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: Node.js | LNP</title>
+  <title>网络安全协会网站的搭建(一) | LNP</title>
   
   
 
@@ -182,33 +182,20 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            
-    <script>
-        window.subData= { title:'热门标签 : Node.js'}
-    </script>
-
-
-<section class="post-list">
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
 <section class='meta'>
   
   <div class="meta" id="header-meta">
     
-      <h2 class="title">
-          <a href="/Crepeblog/2019/04/30/记一次express后端的搭建/">
-              
-                  记一次express后端的搭建
-              
-          </a>
-      </h2>
+      
+          <h1 class="title">网络安全协会网站的搭建(一)</h1>
+      
     
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-04-30
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-06
       </time>
     
 
@@ -218,46 +205,136 @@
     
 
     
+      
+        <div class="metatag browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          &nbsp;<span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
+    
 
   </div>
 </section>
 
     <section class="article typo">
-        <h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>作为网工人怎么能不会搭后端呢？<br>今天就拿Node.js下的Express搭一个后端<br>(最终变成课设了233…)</p>
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="网络安全协会网站的搭建"><a href="#网络安全协会网站的搭建" class="headerlink" title="网络安全协会网站的搭建"></a>网络安全协会网站的搭建</h2><p>一个网络安全协会要体现自己的特色，必须要有自己的网站才行啊<br>特别是看了ACM协会的网站之后，更加坚定了开发的想法<br>所以<a href="https://github.com/lollipopnougat/chdns" target="_blank" rel="noopener">这个</a>项目就出现了</p>
+<p><a href="https://chdans.github.io" target="_blank" rel="noopener">网站预览</a></p>
+<a id="more"></a>
+
+<h2 id="Vue-js-与-Node-js"><a href="#Vue-js-与-Node-js" class="headerlink" title="Vue.js 与 Node.js"></a>Vue.js 与 Node.js</h2><blockquote>
+<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+</blockquote>
+<p>早就在关注尤雨溪大佬和他的<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">Vue.js</a>项目。</p>
+<p>今年年初曾尝试搞了一个demo，结果最后搞的一头雾水，也没弄懂…<br>最终结果就是弃了…</p>
+<p>直到今年5月份我准备做数据库课设，才算稍微系统地学习了一下 <code>Node.js</code>，用 <code>Express</code> 熟悉了一下 <code>Node</code> 的项目结构和使用 <code>npm</code> 的方法，顺便提高了js的开发能力。我也学到了 <code>js</code> 的异步回调什么的，还有编写 <code>HTML</code> 和 <code>CSS</code> 的熟练度也得到了少许提高，暑假时又学习了一部分 <code>TypeScript</code> 和 <code>ES6</code> 的语法，勉强算是做了较多的铺垫。</p>
+<p>这两天重新看 <code>vue</code> 的项目的时候终于明白那都是什么东西了，有点 <code>Express</code> 的感觉，但是 <code>router</code> 竟然可以 build 成静态的，默认采用的是 <code>Hash</code> 方式，一个网站可以做成单页的，有趣啊！</p>
+<p>于是9月1日建立了项目仓库，9月3日提交了研究了两天的结果(一个 <code>Header</code> )，因为将来要放到新GitHub账号上，build出来的静态文件有开 Http 服务的要求，因此我专门开了我GitHub的托管根目录做预览，这周前前后后一共提交了7次，之后就正式迁移到 <a href="https://chdans.github.io" target="_blank" rel="noopener">chdans.github.io</a> 了，我修改了结构，我build好的项目提交到我fork出来的 chdans 创建的那个静态页项目下，然后再新建 <code>Pull Request</code>，提交到 chdans，再由 chdans来 <code>Merge</code> 请求，这就是一次完整的更新。</p>
+<p>不得不说<a href="https://element.eleme.io" target="_blank" rel="noopener">element ui</a>做的真的既简介又漂亮，原版的配色我是很喜欢的，我一度把协会的宣传海报也采用相同配色，如图<br><img src="https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/neoposter.png" alt="海报"></p>
+<p>之后会详细解释这个网站项目</p>
+<p>今天就写这么多，明天还要迎新，7点就要去…</p>
+
+      </div>
         
-            <div class="readmore">
-                <a href="/Crepeblog/2019/04/30/记一次express后端的搭建/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
+          <section class='meta' id="footer-meta">
+            <time class="metatag time" itemprop="dateUpdated" datetime="2019-09-07T00:00:45+08:00" content="2019-09-07"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
+              &nbsp;2019-09-07
+            </time>
+            
+                
+                <div class="metatag tags"><a class="tag" href="/Crepeblog/tags/Vue-js/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;Vue.js</a></div> <div class="metatag tags"><a class="tag" href="/Crepeblog/tags/网站搭建/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;网站搭建</a></div> <div class="metatag tags"><a class="tag" href="/Crepeblog/tags/网络安全协会/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;网络安全协会</a></div>
+            
+            
+          </section>
         
 
         
-            <div class="full-width auto-padding tags">
+            <div class="prev-next">
                 
-                    <a href="/Crepeblog/tags/网站搭建/"><i class="fas fa-hashtag fa-fw"></i>网站搭建</a>
                 
-                    <a href="/Crepeblog/tags/Node-js/"><i class="fas fa-hashtag fa-fw"></i>Node.js</a>
-                
-                    <a href="/Crepeblog/tags/Express/"><i class="fas fa-hashtag fa-fw"></i>Express</a>
-                
-                    <a href="/Crepeblog/tags/后端/"><i class="fas fa-hashtag fa-fw"></i>后端</a>
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/Crepeblog/2019/07/29/PowerShell入门指南(3)/" rel="prev" title="PowerShell入门指南(3)">
+                                    
+                                        PowerShell入门指南(3)
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/Crepeblog/tags/PowerShell/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>PowerShell</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
             </div>
         
+
     </section>
+
 </article>
 
-        </div>
-    
-</section>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
 
 
 
-<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+  <article class="post white-box comments">
+    <section class="article typo">
+
+      
+        
+
+    <div class="recommended_posts">
+        <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;相关文章</h4>
+        <ul>
+            
+                <li><a href="https://crepe.coding.me/Crepeblog/2019/07/29/PowerShell入门指南(3)/">PowerShell入门指南(3)</a></li>
+            
+                <li><a href="https://crepe.coding.me/Crepeblog/2019/04/30/记一次express后端的搭建/">记一次express后端的搭建</a></li>
+            
+                <li><a href="https://crepe.coding.me/Crepeblog/2019/03/29/PowerShell入门指南(2)/">PowerShell入门指南(2)</a></li>
+            
+                <li><a href="https://crepe.coding.me/Crepeblog/2019/03/29/PowerShell入门指南1/">PowerShell入门指南(1)</a></li>
+            
+        </ul>
+    </div>
 
 
+      
+
+      
+        <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+        
+        
+        
+          
+            <section id="comments">
+              <div id="valine_container" class="valine_thread">
+                <i class="fas fa-spinner fa-spin fa-fw"></i>
+              </div>
+            </section>
+          
+        
+      
+    </section>
+  </article>
+
+
+
+<script>
+    window.subData = {
+        title: '网络安全协会网站的搭建(一)',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -453,6 +530,39 @@
         
 
 
+  <section class='music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn" target="_blank"
+    rel="external nofollow noopener noreferrer"
+    href="https://music.163.com/#/user/home?id=505951930"
+    title="https://music.163.com/#/user/home?id=505951930">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#00b871"
+    
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2579535954"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
 
       
     
@@ -461,6 +571,20 @@
       
       
         
+  <section class='toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全协会网站的搭建"><span class="toc-text">网络安全协会网站的搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js-与-Node-js"><span class="toc-text">Vue.js 与 Node.js</span></a></li></ol>
+    </div>
+  </section>
+
 
       
     
@@ -559,6 +683,42 @@
   
   
   
+    
+      
+      
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+          
+            
+              <script src="https://cdn.jsdelivr.net/gh/lollipopnougat/material-x@master/source/js/volantis.min.js"></script>
+            
+          
+          <script>
+          var GUEST_INFO = ['nick','mail','link'];
+          var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+          });
+          var notify = 'false' == true;
+          var verify = 'false' == true;
+          var valine = new Valine();
+          valine.init({
+            el: '#valine_container',
+            notify: notify,
+            verify: verify,
+            guest_info: guest_info,
+            
+            appId: "pexXNosfrdkaSXNiev7EMXs8-gzGzoHsz",
+            appKey: "yIuA205Vt21KbLTH3nmmGVj2",
+            placeholder: "有问题就来评论吧~",
+            pageSize:'10',
+            avatar:'mp',
+            lang:'zh-cn',
+            highlight:''
+          })
+          </script>
+        
+      
     
   
   
