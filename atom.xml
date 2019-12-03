@@ -6,7 +6,7 @@
   <link href="/Crepeblog/atom.xml" rel="self"/>
   
   <link href="https://crepe.coding.me/Crepeblog/"/>
-  <updated>2019-09-06T16:00:45.164Z</updated>
+  <updated>2019-12-03T13:13:18.119Z</updated>
   <id>https://crepe.coding.me/Crepeblog/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近忙的很</title>
+    <link href="https://crepe.coding.me/Crepeblog/2019/12/03/%E6%9C%80%E8%BF%91%E5%BF%99%E7%9A%84%E5%BE%88/"/>
+    <id>https://crepe.coding.me/Crepeblog/2019/12/03/最近忙的很/</id>
+    <published>2019-12-03T13:10:21.000Z</published>
+    <updated>2019-12-03T13:13:18.119Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="最近事还挺多的…"><a href="#最近事还挺多的…" class="headerlink" title="最近事还挺多的…"></a>最近事还挺多的…</h2><p>也没顾的上更新博客</p><a id="more"></a><p>等到课近期的设完成大概就有时间了吧…<br>今天先鸽了，，，咕咕咕</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;最近事还挺多的…&quot;&gt;&lt;a href=&quot;#最近事还挺多的…&quot; class=&quot;headerlink&quot; title=&quot;最近事还挺多的…&quot;&gt;&lt;/a&gt;最近事还挺多的…&lt;/h2&gt;&lt;p&gt;也没顾的上更新博客&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="吐槽" scheme="https://crepe.coding.me/Crepeblog/tags/%E5%90%90%E6%A7%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>网络安全协会网站的搭建(一)</title>
