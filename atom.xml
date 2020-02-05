@@ -6,7 +6,7 @@
   <link href="/Crepeblog/atom.xml" rel="self"/>
   
   <link href="https://crepe.coding.me/Crepeblog/"/>
-  <updated>2019-12-03T13:13:18.119Z</updated>
+  <updated>2020-02-05T03:24:13.984Z</updated>
   <id>https://crepe.coding.me/Crepeblog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>肺炎疫情信息的获取</title>
+    <link href="https://crepe.coding.me/Crepeblog/2020/02/05/%E8%82%BA%E7%82%8E%E7%96%AB%E6%83%85%E4%BF%A1%E6%81%AF%E7%9A%84%E8%8E%B7%E5%8F%96/"/>
+    <id>https://crepe.coding.me/Crepeblog/2020/02/05/肺炎疫情信息的获取/</id>
+    <published>2020-02-05T02:47:53.000Z</published>
+    <updated>2020-02-05T03:24:13.984Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="python爬虫相关"><a href="#python爬虫相关" class="headerlink" title="python爬虫相关"></a>python爬虫相关</h3><a id="more"></a><p>最近病毒肆虐，丁香园为了方便大众得知最新消息，开设了一个<a href="https://ncov.dxy.cn/ncovh5/view/pneumonia" target="_blank" rel="noopener">网页</a>,可以从中得知当前的最新感染数据信息，笔者在浏览此页面后看到数据是以json格式送到浏览器的，觉得不妨写一个爬虫获取数据写入文件来进行统计…</p><h4 id="如何从爬取的字符串中获取数据？"><a href="#如何从爬取的字符串中获取数据？" class="headerlink" title="如何从爬取的字符串中获取数据？"></a>如何从爬取的字符串中获取数据？</h4><p>经过一番分析，最终使用了正则和BS库获取了json字符串，剩下的就很好处理了。</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pat1 = re.compile(<span class="string">'(\[[^\]]+?\])'</span>)</span><br><span class="line">pat2 = re.compile(<span class="string">'(\&#123;[^\&#125;\&#123;]+?\&#125;)'</span>)</span><br><span class="line">dat1 = str(soup.findAll(id=<span class="string">'getListByCountryTypeService1'</span>)[<span class="number">0</span>].string)</span><br><span class="line">dat2 = str(soup.findAll(id=<span class="string">'getStatisticsService'</span>)[<span class="number">0</span>].string)</span><br><span class="line">st1 = pat1.findall(dat1)[<span class="number">0</span>]</span><br><span class="line">st2 = pat2.findall(dat2)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure><p>完成整个脚本以后配置一下计划任务，每一小时获取一次写入文件，省了不少事…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;python爬虫相关&quot;&gt;&lt;a href=&quot;#python爬虫相关&quot; class=&quot;headerlink&quot; title=&quot;python爬虫相关&quot;&gt;&lt;/a&gt;python爬虫相关&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://crepe.coding.me/Crepeblog/tags/python/"/>
+    
+      <category term="爬虫" scheme="https://crepe.coding.me/Crepeblog/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>最近忙的很</title>
@@ -53,9 +75,9 @@
     </summary>
     
     
-      <category term="Vue.js" scheme="https://crepe.coding.me/Crepeblog/tags/Vue-js/"/>
-    
       <category term="网站搭建" scheme="https://crepe.coding.me/Crepeblog/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="Vue.js" scheme="https://crepe.coding.me/Crepeblog/tags/Vue-js/"/>
     
       <category term="网络安全协会" scheme="https://crepe.coding.me/Crepeblog/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E4%BC%9A/"/>
     
@@ -98,13 +120,13 @@
     </summary>
     
     
-      <category term="网站搭建" scheme="https://crepe.coding.me/Crepeblog/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
-    
       <category term="Node.js" scheme="https://crepe.coding.me/Crepeblog/tags/Node-js/"/>
     
       <category term="Express" scheme="https://crepe.coding.me/Crepeblog/tags/Express/"/>
     
       <category term="后端" scheme="https://crepe.coding.me/Crepeblog/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="网站搭建" scheme="https://crepe.coding.me/Crepeblog/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
