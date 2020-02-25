@@ -134,6 +134,8 @@
       <a class="logo flat-box" target="_self" href='/Crepeblog/' >
         
           
+            <i class='https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/favicon.ico'></i>
+          
           
             LNP
           
@@ -349,7 +351,7 @@
     
       <a href="https://lollipopnougat.github.io/Crepeblog" rel="nofollow">
         
-          <i class="" aria-hidden="true"></i>
+          <i class="fas fa-user" aria-hidden="true"></i>
         
         <p>LNP.</p>
       </a>
@@ -400,7 +402,7 @@
 
 <p>最近病毒肆虐，丁香园为了方便大众得知最新消息，开设了一个<a href="https://ncov.dxy.cn/ncovh5/view/pneumonia" target="_blank" rel="noopener">网页</a>,可以从中得知当前的最新感染数据信息，笔者在浏览此页面后看到数据是以 json 格式送到浏览器的，觉得不妨写一个爬虫获取数据写入文件来进行统计…</p>
 <h4 id="如何从爬取的字符串中获取数据"><a href="#如何从爬取的字符串中获取数据" class="headerlink" title="如何从爬取的字符串中获取数据"></a>如何从爬取的字符串中获取数据</h4><p>经过一番分析，最终使用了正则和 BS 库获取了 json 字符串，剩下的就很好处理了。</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pat1 = re.compile(<span class="string">'(\[[^\]]+?\])'</span>)</span><br><span class="line">pat2 = re.compile(<span class="string">'(\&#123;[^\&#125;\&#123;]+?\&#125;)'</span>)</span><br><span class="line">dat1 = str(soup.findAll(id=<span class="string">'getListByCountryTypeService1'</span>)[<span class="number">0</span>].string)</span><br><span class="line">dat2 = str(soup.findAll(id=<span class="string">'getStatisticsService'</span>)[<span class="number">0</span>].string)</span><br><span class="line">st1 = pat1.findall(dat1)[<span class="number">0</span>]</span><br><span class="line">st2 = pat2.findall(dat2)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pat1 = re.compile(<span class="string">'(\[[^\]]+?\])'</span>)</span><br><span class="line">pat2 = re.compile(<span class="string">'=\s?(\&#123;.+)\&#125;catch'</span>) </span><br><span class="line"><span class="comment">#原本写的是 pat2 = re.compile('(\&#123;[^\&#125;\&#123;]+?\&#125;)') 但丁香园发布了一条特殊格式的数据后不能用了，于是就换成了上面那个</span></span><br><span class="line">dat1 = str(soup.findAll(id=<span class="string">'getListByCountryTypeService1'</span>)[<span class="number">0</span>].string)</span><br><span class="line">dat2 = str(soup.findAll(id=<span class="string">'getStatisticsService'</span>)[<span class="number">0</span>].string)</span><br><span class="line">st1 = pat1.findall(dat1)[<span class="number">0</span>]</span><br><span class="line">st2 = pat2.findall(dat2)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 
 <h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><p>完成整个脚本以后配置一下计划任务，每一小时获取一次写入文件，省了不少事…其实还可以通过异步维护一个计时器，每隔一段时间运行一次(好像单线程就是用 sleep 也可以吧，嘛不管了)</p>
 
