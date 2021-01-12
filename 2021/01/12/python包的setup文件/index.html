@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>网络安全协会网站的搭建(一) | LNP</title>
+  <title>python包的setup文件 | LNP</title>
   
   
 
@@ -344,8 +344,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/09/06/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E4%BC%9A%E7%BD%91%E7%AB%99%E7%9A%84%E6%90%AD%E5%BB%BA(1)/">
-        网络安全协会网站的搭建(一)
+      <a href="/2021/01/12/python%E5%8C%85%E7%9A%84setup%E6%96%87%E4%BB%B6/">
+        python包的setup文件
       </a>
     </h1>
   
@@ -381,7 +381,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>消息发布于：2019年9月6日</p>
+    <p>消息发布于：2021年1月12日</p>
   </a>
 </div>
 
@@ -408,21 +408,111 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <h3 id="网络安全协会网站的搭建"><a href="#网络安全协会网站的搭建" class="headerlink" title="网络安全协会网站的搭建"></a>网络安全协会网站的搭建</h3><p>一个网络安全协会要体现自己的特色，必须要有自己的网站才行啊<br>特别是看了ACM协会的网站之后，更加坚定了开发的想法<br>所以<a href="https://github.com/lollipopnougat/chdns" target="_blank" rel="noopener">这个</a>项目就出现了</p>
-<p><a href="https://chdans.github.io" target="_blank" rel="noopener">网站预览</a></p>
+          <h3 id="鸽了一年，突然想起来我还有个博客"><a href="#鸽了一年，突然想起来我还有个博客" class="headerlink" title="鸽了一年，突然想起来我还有个博客"></a>鸽了一年，突然想起来我还有个博客</h3><p>正好最近写了个超级简陋的 <code>pypi</code> 源管理工具，学习了一波setup.py文件的撰写</p>
 <a id="more"></a>
 
-<h2 id="Vue-js-与-Node-js"><a href="#Vue-js-与-Node-js" class="headerlink" title="Vue.js 与 Node.js"></a>Vue.js 与 Node.js</h2><blockquote>
-<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>python开发者们习惯使用 <code>pip</code> 来安装一些第三方模块，这个安装过程之所以简单，是因为模块开发者写好了模块的setup.py，而这个文件负责的过程就是 <code>打包</code>。</p>
+<p>打包，就是将你的源代码进一步封装，并且将所有的项目部署工作都事先安排好，这样使用者拿到后安装即可用，不用再操心如何部署的问题。</p>
+<h4 id="setuptools"><a href="#setuptools" class="headerlink" title="setuptools"></a>setuptools</h4><p><code>setuptools</code> 是官方提供的一个专业用于包分发的工具，是对包的分发很有用处，定制化程序非常高。</p>
+<h3 id="源码包与二进制包"><a href="#源码包与二进制包" class="headerlink" title="源码包与二进制包"></a>源码包与二进制包</h3><p>Python 包的分发可以分为两种：</p>
+<ol>
+<li>以源码包的方式发布<br><br>源码包安装的过程，是先解压，再编译，最后才安装，所以它是跨平台的，由于每次安装都要进行编译，相对二进包安装方式来说安装速度较慢。</li>
+</ol>
+<blockquote>
+<p>源码包的本质是一个压缩包，其常见的格式有：<br><br>zip, tar, tar.gz, tar.bz2 等</p>
 </blockquote>
-<p>早就在关注尤雨溪大佬和他的<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener">Vue.js</a>项目。</p>
-<p>今年年初曾尝试搞了一个demo，结果最后搞的一头雾水，也没弄懂…<br>最终结果就是弃了…</p>
-<p>直到今年5月份我准备做数据库课设，才算稍微系统地学习了一下 <code>Node.js</code>，用 <code>Express</code> 熟悉了一下 <code>Node</code> 的项目结构和使用 <code>npm</code> 的方法，顺便提高了js的开发能力。我也学到了 <code>js</code> 的异步回调什么的，还有编写 <code>HTML</code> 和 <code>CSS</code> 的熟练度也得到了少许提高，暑假时又学习了一部分 <code>TypeScript</code> 和 <code>ES6</code> 的语法，勉强算是做了较多的铺垫。</p>
-<p>这两天重新看 <code>vue</code> 的项目的时候终于明白那都是什么东西了，有点 <code>Express</code> 的感觉，但是 <code>router</code> 竟然可以 build 成静态的，默认采用的是 <code>Hash</code> 方式，一个网站可以做成单页的，有趣啊！</p>
-<p>于是9月1日建立了项目仓库，9月3日提交了研究了两天的结果(一个 <code>Header</code> )，因为将来要放到新GitHub账号上，build出来的静态文件有开 Http 服务的要求，因此我专门开了我GitHub的托管根目录做预览，这周前前后后一共提交了7次，之后就正式迁移到 <a href="https://chdans.github.io" target="_blank" rel="noopener">chdans.github.io</a> 了，我修改了结构，我build好的项目提交到我fork出来的 chdans 创建的那个静态页项目下，然后再新建 <code>Pull Request</code>，提交到 chdans，再由 chdans来 <code>Merge</code> 请求，这就是一次完整的更新。</p>
-<p>不得不说<a href="https://element.eleme.io" target="_blank" rel="noopener">element ui</a>做的真的既简介又漂亮，原版的配色我是很喜欢的，我一度把协会的宣传海报也采用相同配色，如图<br><img src="https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/neoposter.png" alt="海报"></p>
-<p>之后会详细解释这个网站项目</p>
-<p>今天就写这么多，明天还要迎新，7点就要去…</p>
+<ol start="2">
+<li>以二进制包形式发布<br><br>二进制包的安装过程省去了编译的过程，直接进行解压安装，所以安装速度较源码包来说更快。<br><br>由于不同平台的二进制文件无法通用，所以在发布时，有时可能需编译多个平台的包（当然如果使用whl也可以做到跨平台使用）。</li>
+</ol>
+<blockquote>
+<p>二进制包的常见格式有：<br>egg, wheel(whl)</p>
+</blockquote>
+<h3 id="setup-py文件结构"><a href="#setup-py文件结构" class="headerlink" title="setup.py文件结构"></a>setup.py文件结构</h3><p>打包分发最关键的一步是编写 <code>setup.py</code> 文件。<br>以下是我项目使用的 <code>setup.py</code> 示例</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup, find_packages</span><br><span class="line"><span class="keyword">import</span> pimm</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line">this_directory = path.abspath(path.dirname(__file__))</span><br><span class="line">long_description = <span class="keyword">None</span></span><br><span class="line"><span class="keyword">with</span> open(path.join(this_directory, <span class="string">'README.md'</span>), encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    long_description = f.read()</span><br><span class="line"></span><br><span class="line">setup(name=<span class="string">'pimm'</span>, <span class="comment"># 包名称</span></span><br><span class="line">      packages=[<span class="string">'pimm'</span>], <span class="comment"># 需要处理的包目录</span></span><br><span class="line">      version=<span class="string">'0.0.5'</span>, <span class="comment"># 版本</span></span><br><span class="line">      classifiers=[</span><br><span class="line">          <span class="string">'Development Status :: 3 - Alpha'</span>,</span><br><span class="line">          <span class="string">'License :: OSI Approved :: MIT License'</span>,</span><br><span class="line">          <span class="string">'Programming Language :: Python'</span>, <span class="string">'Intended Audience :: Developers'</span>,</span><br><span class="line">          <span class="string">'Operating System :: OS Independent'</span>,</span><br><span class="line">          <span class="string">'Programming Language :: Python :: 3.5'</span>,</span><br><span class="line">          <span class="string">'Programming Language :: Python :: 3.6'</span>,</span><br><span class="line">          <span class="string">'Programming Language :: Python :: 3.7'</span>,</span><br><span class="line">          <span class="string">'Programming Language :: Python :: 3.8'</span>,</span><br><span class="line">          <span class="string">'Programming Language :: Python :: 3.9'</span></span><br><span class="line">      ],</span><br><span class="line">      install_requires=[<span class="string">'ping3'</span>],</span><br><span class="line">      entry_points=&#123;<span class="string">'console_scripts'</span>: [<span class="string">'pmm=pimm.pimm_module:main'</span>]&#125;,</span><br><span class="line">      package_data=&#123;<span class="string">''</span>: [<span class="string">'*.json'</span>]&#125;,</span><br><span class="line">      auth=<span class="string">'lollipopnougat'</span>, <span class="comment"># 作者</span></span><br><span class="line">      author_email=<span class="string">'lollipopnougat@126.com'</span>, <span class="comment"># 作者邮箱</span></span><br><span class="line">      description=<span class="string">'pypi mirrors manager'</span>, <span class="comment"># 介绍</span></span><br><span class="line">      long_description=long_description, <span class="comment"># 长介绍，在pypi项目页显示</span></span><br><span class="line">      long_description_content_type=<span class="string">'text/markdown'</span>, <span class="comment"># 长介绍使用的类型，我使用的是md</span></span><br><span class="line">      url=<span class="string">'https://github.com/lollipopnougat/pimm'</span>, <span class="comment"># 包主页，一般是github项目主页</span></span><br><span class="line">      license=<span class="string">'MIT'</span>, <span class="comment"># 协议</span></span><br><span class="line">      keywords=<span class="string">'pimm source manager'</span>) <span class="comment"># 关键字 搜索用</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到 <code>setup.py</code> 调用了 <code>setuptools</code> 包中的setup方法，下面解释一下各个参数的含义</p>
+<h4 id="程序分类信息"><a href="#程序分类信息" class="headerlink" title="程序分类信息"></a>程序分类信息</h4><p><code>classifiers</code> 参数说明包的分类信息，接收一个 <code>string</code> 列表</p>
+<h5 id="发展时期"><a href="#发展时期" class="headerlink" title="发展时期"></a>发展时期</h5><ul>
+<li>Development Status :: 1 - Planning</li>
+<li>Development Status :: 2 - Pre-Alpha</li>
+<li>Development Status :: 3 - Alpha</li>
+<li>Development Status :: 4 - Beta</li>
+<li>Development Status :: 5 - Production/Stable</li>
+<li>…</li>
+</ul>
+<h5 id="开发目标用户"><a href="#开发目标用户" class="headerlink" title="开发目标用户"></a>开发目标用户</h5><ul>
+<li>Intended Audience :: Customer Service</li>
+<li>Intended Audience :: Developers</li>
+<li>Intended Audience :: Education</li>
+<li>Intended Audience :: End Users/Desktop</li>
+<li>Intended Audience :: Financial and Insurance Industry</li>
+<li>Intended Audience :: Healthcare Industry</li>
+<li>…</li>
+</ul>
+<h5 id="目标编程语言"><a href="#目标编程语言" class="headerlink" title="目标编程语言"></a>目标编程语言</h5><ul>
+<li>Programming Language :: Basic</li>
+<li>Programming Language :: C</li>
+<li>Programming Language :: C#</li>
+<li>Programming Language :: C++</li>
+<li>…</li>
+<li>Programming Language :: Python :: 3.4</li>
+<li>Programming Language :: Python :: 3.5</li>
+<li>Programming Language :: Python :: 3.6</li>
+<li>Programming Language :: Python :: 3.7</li>
+<li>Programming Language :: Python :: 3.8</li>
+<li>Programming Language :: Python :: 3.9</li>
+<li>…</li>
+</ul>
+<h5 id="该字段所有支持的值"><a href="#该字段所有支持的值" class="headerlink" title="该字段所有支持的值"></a>该字段所有支持的值</h5><p><a href="https://pypi.org/pypi?%3Aaction=list_classifiers" target="_blank" rel="noopener">Intended Audience list</a></p>
+<h4 id="文件分发"><a href="#文件分发" class="headerlink" title="文件分发"></a>文件分发</h4><p>安装过程中，需要安装的静态文件，如配置文件、图片等可以使用 <code>data_files</code> 参数，接收一个字典参数</p>
+<p>字典的键表示部署后文件的存放位置(目标机器)，空字符串表示放在包的根目录</p>
+<p>此外需要再准备一个 <code>MANIFEST.in</code> 文件与 <code>setup.py</code> 同级, 来控制文件的分发</p>
+<h5 id="一个demo"><a href="#一个demo" class="headerlink" title="一个demo"></a>一个demo</h5><ul>
+<li>所有根目录下的以 txt 为后缀名的文件，都会分发</li>
+<li>根目录下的 examples 目录 和 txt、py文件都会分发</li>
+<li>路径匹配上 examples/sample?/build 不会分发</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">include *.txt</span><br><span class="line">recursive-include examples *.txt *.py</span><br><span class="line">prune examples&#x2F;sample?&#x2F;build</span><br></pre></td></tr></table></figure>
+
+<h4 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h4><p>使用 <code>install_requires</code> 参数指定安装依赖，表明当前模块使用时依赖哪些包，若环境中没有，则会从pypi中下载安装, 此参数接收一个 <code>string</code> 列表</p>
+<p>使用 <code>tests_require</code> 参数指定测试依赖，仅在测试时需要使用的依赖，在正常发布的代码中是没有用到的，此参数接收一个 <code>string</code> 列表</p>
+<p>使用 <code>extras_require</code> 参数指定可选的依赖，此参数接收一个 <code>string</code> 列表</p>
+<h4 id="生成可执行文件的分发"><a href="#生成可执行文件的分发" class="headerlink" title="生成可执行文件的分发"></a>生成可执行文件的分发</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用来支持自动生成脚本，安装后会自动生成 /usr/bin/pmm 的可执行文件(windows管理员权限下会在Python文件夹的script里面生成pmm.exe)</span></span><br><span class="line"><span class="comment"># 该文件入口指向 pimm/pimm_module.py 的main 函数</span></span><br><span class="line">entry_points=&#123;<span class="string">'console_scripts'</span>: [<span class="string">'pmm=pimm.pimm_module:main'</span>]&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 bin/foo.sh 和 bar.py 脚本，生成到系统 PATH中</span></span><br><span class="line"><span class="comment"># 执行 python setup.py install 后</span></span><br><span class="line"><span class="comment"># 会生成 如 /usr/bin/foo.sh 和 如 /usr/bin/bar.py</span></span><br><span class="line">scripts=[<span class="string">'bin/foo.sh'</span>, <span class="string">'bar.py'</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-setup-py-构建包"><a href="#使用-setup-py-构建包" class="headerlink" title="使用 setup.py 构建包"></a>使用 setup.py 构建包</h3><ol>
+<li>构建源码发布包</li>
+</ol>
+<p>用于发布一个 <code>Python</code> 模块或项目，将源码打包成 <code>tar.gz</code> 或者 <code>zip</code> 压缩包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python setup.py sdist <span class="comment"># 打包，默认tar.gz</span></span><br><span class="line">python setup.py sdist --formats=gztar,zip <span class="comment"># 打包，指定压缩格式</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>构建二进制分发包</li>
+</ol>
+<p>在windows中我们习惯了双击 exe 进行软件的安装，Python 模块的安装也同样支持 打包成 exe 这样的二进制软件包</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py bdist_wininst</span><br></pre></td></tr></table></figure>
+
+<p>若你的项目，需要安装多个平台下，既有 Windows 也有 Linux，按照上面的方法，多种格式我们要执行多次命令，为了方便，你可以一步到位，执行如下这条命令，即可生成多个格式的进制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py bdist</span><br></pre></td></tr></table></figure>
+
+<p>构建 wheel 包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py sdist bdist_wheel</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用-setup-py-安装包"><a href="#使用-setup-py-安装包" class="headerlink" title="使用 setup.py 安装包"></a>使用 setup.py 安装包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+
+<p>如若你的项目还处于开发阶段，频繁的安装模块，也是一个麻烦事。</p>
+<p>这时候可以使用下面这条命令安装，该方法不会真正的安装包，而是在系统环境中创建一个软链接指向包实际所在目录。这边在修改包之后不用再安装就能生效，便于调试。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py develop</span><br></pre></td></tr></table></figure>
+
+<h4 id="发布包到-PyPi"><a href="#发布包到-PyPi" class="headerlink" title="发布包到 PyPi"></a>发布包到 PyPi</h4><p>若你觉得自己开发的模块非常不错，想要 share 给其他人使用，你可以将其上传到 PyPi （Python Package Index）上，它是 Python 官方维护的第三方包仓库，用于统一存储和管理开发者发布的 Python 包</p>
+<p>如果要发布自己的包，需要先到 pypi 上注册账号。然后创建 <code>~/.pypirc</code>(windows <code>C:/User/yourname/.pypirc</code>) 文件，此文件中配置 PyPI 访问地址和账号。.pypirc文件内容请根据自己的账号来修改</p>
+<h5 id="典型的-pypirc-文件"><a href="#典型的-pypirc-文件" class="headerlink" title="典型的 .pypirc 文件"></a>典型的 .pypirc 文件</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[distutils]</span></span><br><span class="line"><span class="attr">index-servers</span> = pypi</span><br><span class="line"></span><br><span class="line"><span class="section">[pypi]</span></span><br><span class="line">username:xxx</span><br><span class="line">password:xxx</span><br></pre></td></tr></table></figure>
+<h5 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setup.py sdist upload</span><br></pre></td></tr></table></figure>
+
+<p>想更省劲的话可以考虑安装 <code>twine</code>，然后使用 <code>twine</code> 上传，这个还可以上传whl文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">twine upload dist/* <span class="comment"># 上传dist下的所有文件</span></span><br></pre></td></tr></table></figure>
+
+<p>pypi 好像不能覆盖文件，要上传新的需要修改版本号</p>
+<p>上传以后就可以使用pip下载自己的包了，顺便清华源是10分钟更新一次，所以说10分钟后清华的pypi源就能找到自己的包了</p>
 
           
         </div>
@@ -442,7 +532,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Vue-js/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Vue.js</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>网站搭建</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E4%BC%9A/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>网络安全协会</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/pip/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>pip</p></a></div>
 
 
         
@@ -455,40 +545,21 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                            <h4>
-                                <a href="/2019/12/03/%E6%9C%80%E8%BF%91%E5%BF%99%E7%9A%84%E5%BE%88/" rel="prev" title="最近忙的很">
-                                  
-                                      最近忙的很
-                                  
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/%E5%90%90%E6%A7%BD/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 吐槽</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2019/07/29/PowerShell%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97(3)/" rel="prev" title="PowerShell入门指南(3)">
+                                <a href="/2020/02/05/%E8%82%BA%E7%82%8E%E7%96%AB%E6%83%85%E4%BF%A1%E6%81%AF%E7%9A%84%E8%8E%B7%E5%8F%96/" rel="prev" title="肺炎疫情信息的获取">
                                     
-                                        PowerShell入门指南(3)
+                                        肺炎疫情信息的获取
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/PowerShell/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> PowerShell</a>
+                                    <a class="tag" href="/tags/python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> python</a> <a class="tag" href="/tags/%E7%88%AC%E8%99%AB/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 爬虫</a>
                                 </h6>
                             
                         </span>
@@ -533,7 +604,7 @@
 
   <script>
     window.subData = {
-      title: '网络安全协会网站的搭建(一)',
+      title: 'python包的setup文件',
       tools: true
     }
   </script>
@@ -716,7 +787,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络安全协会网站的搭建"><span class="toc-text">网络安全协会网站的搭建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js-与-Node-js"><span class="toc-text">Vue.js 与 Node.js</span></a>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#鸽了一年，突然想起来我还有个博客"><span class="toc-text">鸽了一年，突然想起来我还有个博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#setuptools"><span class="toc-text">setuptools</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码包与二进制包"><span class="toc-text">源码包与二进制包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setup-py文件结构"><span class="toc-text">setup.py文件结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#程序分类信息"><span class="toc-text">程序分类信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#发展时期"><span class="toc-text">发展时期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#开发目标用户"><span class="toc-text">开发目标用户</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#目标编程语言"><span class="toc-text">目标编程语言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#该字段所有支持的值"><span class="toc-text">该字段所有支持的值</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件分发"><span class="toc-text">文件分发</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一个demo"><span class="toc-text">一个demo</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖包"><span class="toc-text">依赖包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成可执行文件的分发"><span class="toc-text">生成可执行文件的分发</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-setup-py-构建包"><span class="toc-text">使用 setup.py 构建包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-setup-py-安装包"><span class="toc-text">使用 setup.py 安装包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发布包到-PyPi"><span class="toc-text">发布包到 PyPi</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#典型的-pypirc-文件"><span class="toc-text">典型的 .pypirc 文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#上传"><span class="toc-text">上传</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
