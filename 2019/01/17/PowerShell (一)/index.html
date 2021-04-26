@@ -1,387 +1,499 @@
 <!DOCTYPE html>
-<html>
-<head hexo-theme='Volantis' version='1.5.4' docs='https://xaoxuu.com/wiki/volantis/'>
+<html lang="zh-CN">
+  <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1'>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- SEO相关 -->
   
-  <title>PowerShell (一) | LNP</title>
+    
   
-  
-
-  
-  <link rel="alternate" href="/atom.xml" title="LNP">
-  
-
-  <meta name="HandheldFriendly" content="True" />
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- meta -->
+  
+  <link rel="preload" href="/css/first.css" as="style">
+  
+
+  <!-- 页面元数据 -->
+  
+  <title>PowerShell (一) - LNP</title>
+  
+    <meta name="keywords" content="PowerShell">
+  
+
+  
+    <meta name="description" content="PowershellPowerShell 是一种命令行外壳程序和脚本环境，使命令行用户和脚本编写者可以方便地使用 .NET Framework的强大功能。">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="LNP" type="application/atom+xml">
+  
+
+  <!-- import meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
-  
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-  
   
 
+  <!-- import link -->
   
-
+  
+  <link rel="icon" type="image/x-icon" size="64x64" href="https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/lnplogor.ico"/>
   
 
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+    
+<link rel="stylesheet" href="/css/first.css">
+
   
 
   
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   
-<link rel="stylesheet" href="/style.css">
+
+  <script id="loadcss"></script>
 
   
-  <link rel="icon" type="image/x-icon" sizes="64x64"
-    href="https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/favicon.ico">
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        '<h1><b>抱歉，您的浏览器无法访问本站</b></h1>'+
+        '<h3>微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>'+
+        '继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</h3><br/>'+
+        '<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>'+
+    '</div>');
+</script>
 
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width = num + "%";
-    }
-    var _hmt = _hmt || [];
-    (function () {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?807dea1b95e976be1d57d805f0c9a338";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
-  
-  
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+	</style>
+    <div class="kill-noscript">
+        <h1><b>抱歉，您的浏览器无法访问本站</b></h1>
+        <h3>本页面需要浏览器支持（启用）JavaScript</h3><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+    </div>
+</noscript>
+
 </head>
-<body>
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover post half'>
-      
-        
-  <p class="title white">lnp's blog</p>
-  
-    <p class="subtitle white">没什么存在感的博客</p>
-  
 
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <i class="icon fas fa-search fa-fw"></i>
-      <input type="text" class="input u-search-input" placeholder="搜索文章" />
-    </form>
-  </div>
-
-<div class='menu navigation'>
-  <ul class='h-list'>
+  <body>
     
-      
-        <li>
-          <a class="nav home white"
-            href="/"
-            
-            
-            id="home">
-            <i class='fas fa-bullhorn fa-fw'></i>&nbsp;所有文章
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home white"
-            href="/projects"
-            
-            
-            id="projects">
-            <i class='fas fa-book fa-fw'></i>&nbsp;我的项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home white"
-            href="https://github.com/lollipopnougat?tab=repositories"
-            
-              rel="nofollow"
-            
-            
-              target="_blank"
-            
-            id="https:github.comlollipopnougat?tab=repositories">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;GitHub项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home white"
-            href="/friends"
-            
-              rel="nofollow"
-            
-            
-            id="friends">
-            <i class='fas fa-handshake fa-fw'></i>&nbsp;朋友
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
 
+<header id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
       
-    </cover>
-    <header class="l_header nav-blur">
-  <div id="loading-bar-wrapper">
-    <div id="loading-bar"></div>
-  </div>
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/bloglogo.png'/>
+          
+          
+          
+        </a>
+      
 
-	<div class='wrapper'>
-		<div class="nav-main container container--flex">
-      <a class="logo flat-box" target="_self" href='/' >
-        
-          
-            <i class='https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/favicon.ico'></i>
-          
-          
-            LNP
-          
-        
-      </a>
 			<div class='menu navigation'>
-				<ul class='h-list'>
+				<ul class='nav-list-h m-pc'>
           
-  					
-  						<li>
-								<a class="nav flat-box" href="/"
-                  
-                    rel="nofollow"
-                  
-                  
-                    target="_self"
-                  
-                  id="home">
-									<i class='fas fa-flag fa-fw'></i>&nbsp;所有文章
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/atom.xml"
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
-                    target="_self"
                   
-                  id="atom.xml">
-									<i class='fas fa-globe-asia fa-fw'></i>&nbsp;RSS订阅
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/projects"
-                  
-                  
-                    target="_self"
-                  
-                  id="projects">
-									<i class='fas fa-cube fa-fw'></i>&nbsp;项目
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/archives"
-                  
-                    rel="nofollow"
+                    id="home"
+                  >
+                  <i class='fas fa-blog fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
                   
                   
-                    target="_self"
                   
-                  id="archives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/friends"
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
                   
-                    rel="nofollow"
                   
                   
-                    target="_self"
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
-                  id="friends">
-									<i class='fas fa-users fa-fw'></i>&nbsp;朋友
-								</a>
-							</li>
-      			
-      		
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>暗黑模式
+                </a>
+              <li>
+            
+          
+          
 				</ul>
 			</div>
 
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="搜索文档" />
+          <input type="text" class="input u-search-input" placeholder="Search..." />
         </form>
       </div>
 
-			<ul class='switcher h-list'>
+			<ul class='switcher nav-list-h m-phone'>
 				
-					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
 				
-				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
-			</ul>
-		</div>
-
-		<div class='nav-sub container container--flex'>
-			<a class="logo flat-box"></a>
-			<ul class='switcher h-list'>
-				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-blog fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>暗黑模式
+                </a>
+              <li>
+            
+          
+            
+          </ul>
+        </li>
 			</ul>
 		</div>
 	</div>
+  </div>
 </header>
-	<aside class="menu-phone white-box">
-    <header>
-		<nav class="menu navigation">
-      <ul>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post search' style="display: none;">
+          
+            <div id='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">lnp's blog</p>
+    
+    
+      <p class="subtitle">没什么存在感的博客</p>
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="搜索博客文章" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
         
           
-            <li>
-							<a class="nav flat-box" href="/"
-                
-                  rel="nofollow"
-                
-                
-                  target="_self"
-                
-                id="home">
-								<i class='fas fa-flag fa-fw'></i>&nbsp;所有文章
-							</a>
-            </li>
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-file-alt fa-fw'></i><p>博客文章</p>
+            </a>
           
-            <li>
-							<a class="nav flat-box" href="/atom.xml"
-                
-                
-                  target="_self"
-                
-                id="atom.xml">
-								<i class='fas fa-globe-asia fa-fw'></i>&nbsp;RSS订阅
-							</a>
-            </li>
+            <a href="/projects/"
+              
+              
+              id="projects">
+              <i class='fas fa-code-branch fa-fw'></i><p>我的项目</p>
+            </a>
           
-            <li>
-							<a class="nav flat-box" href="/projects"
-                
-                
-                  target="_self"
-                
-                id="projects">
-								<i class='fas fa-cube fa-fw'></i>&nbsp;项目
-							</a>
-            </li>
+            <a target="_blank" rel="noopener" href="https://github.com/lollipopnougat?tab=repositories/"
+              
+              
+              id="https:githubcomlollipopnougat?tab=repositories">
+              <i class='fab fa-github fa-fw'></i><p>GitHub</p>
+            </a>
           
-            <li>
-							<a class="nav flat-box" href="/archives"
-                
-                  rel="nofollow"
-                
-                
-                  target="_self"
-                
-                id="archives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;归档
-							</a>
-            </li>
+            <a href="/friends/"
+              
+              
+              id="friends">
+              <i class='fas fa-handshake fa-fw'></i><p>朋友</p>
+            </a>
           
-            <li>
-							<a class="nav flat-box" href="/friends"
-                
-                  rel="nofollow"
-                
-                
-                  target="_self"
-                
-                id="friends">
-								<i class='fas fa-users fa-fw'></i>&nbsp;朋友
-							</a>
-            </li>
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p>归档</p>
+            </a>
           
-       
-      </ul>
-		</nav>
-    </header>
-	</aside>
-<script>setLoadingBarProgress(40);</script>
+            <a href="/atom.xml"
+              
+              
+              id="atomxml">
+              <i class='fas fa-rss fa-fw'></i><p>RSS订阅</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
 
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
   </div>
 
-
-  <div class="l_body">
-    <div class='body-wrapper'>
-      
+      <div id="safearea">
+        <div class="body-wrapper" id="pjax-container">
+          
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow blur article-type-post" id="post" itemscope itemprop="blogPost">
   
 
-  
-    <article id="post" class="post white-box  body-blur article-type-post" itemscope itemprop="blogPost">
-      
 
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
   
-    <h1 class="title">
-      <a href="/2019/01/17/PowerShell%20(%E4%B8%80)/">
-        PowerShell (一)
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/lollipopnougat/website-calculator/img/powershell.png'/>
       </a>
-    </h1>
+    </div>
   
-
-
-      
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        PowerShell (一)
+      </h1>
       <div class='new-meta-box'>
         
           
-        
-          
             
-  <div class='new-meta-item author'>
-    
-      <a href="https://lollipopnougat.github.io" rel="nofollow">
-        
-          <i class="fas fa-user" aria-hidden="true"></i>
-        
-        <p>LNP.</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>消息发布于：2019年1月17日</p>
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://github.com/lollipopnougat/" rel="nofollow noopener">
+    <img no-lazy src="https://www.lollipopnougat.top/picbed/33110314.png">
+    <p>lollipopnougat</p>
   </a>
 </div>
 
@@ -389,28 +501,69 @@
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><span class="sep"></span><a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/PowerShell/">PowerShell</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年1月17日</p>
+  </a>
+</div>
 
           
         
           
             
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：3.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：12分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="PowerShell (一)" data-path="/2019/01/17/PowerShell%20(%E4%B8%80)/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
 
           
         
       </div>
-      
-        <hr>
-      
-    </div>
-  </section>
+    
+  </div>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          <h3 id="Powershell"><a href="#Powershell" class="headerlink" title="Powershell"></a>Powershell</h3><p>PowerShell 是一种命令行外壳程序和脚本环境，<br>使命令行用户和脚本编写者可以方便地使用 .NET Framework的强大功能。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lollipopnougat/website-calculator/img/powershell.png" alt="PowerShell"></p>
-<a id="more"></a>
+  
+  
+  <h3 id="Powershell"><a href="#Powershell" class="headerlink" title="Powershell"></a>Powershell</h3><p>PowerShell 是一种命令行外壳程序和脚本环境，<br>使命令行用户和脚本编写者可以方便地使用 .NET Framework的强大功能。</p>
+<span id="more"></span>
 
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>PowerShell是运行在Windows操作系统上实现对系统以及应用程序进行管理自动化的命令行脚本环境，<br>PowerShell需要.NET环境的支持，借助 <strong>.NET Framework</strong>平台强大的类库，几乎让一切都成为可能。<br>微软起“PowerShell”这个名字并不是夸夸其谈，它完全支持对象，其可读性，易用性，毫不夸张的说可以居所有Shell之首。</p>
 <h2 id="受众"><a href="#受众" class="headerlink" title="受众"></a>受众</h2><p>Windows PowerShell 入门主要面向IT 专业人员、程序员和高级用户。</p>
@@ -422,7 +575,7 @@
 <li><p>执行权限<br>为防止恶意脚本的执行，PowerShell有一个执行策略，默认情况下，这个执行策略被设为受限的（<code>Restricted</code>），<br>意味着PowerShell脚本无法执行，你可以使用下面的cmdlet命令确定当前的执行策略：</p>
 <blockquote>
 <ul>
-<li><code>Get-ExecutionPolicy</code>你可以选择使用的执行策略有：</li>
+<li><code>Get-ExecutionPolicy </code>你可以选择使用的执行策略有：</li>
 <li><code>Restricted</code> -脚本不能运行。 </li>
 <li><code>RemoteSigned</code> - 本地创建的脚本可以运行，但网上下载的脚本不能运行（除非它们拥有由受信任的发布者签署的数字签名）。 </li>
 <li><code>AllSigned</code> – 仅当脚本由受信任的发布者签名才能运行。 </li>
@@ -438,28 +591,23 @@
 <li><p>运行脚本<br>如果你想从命令行运行一个可执行文件，多年来一个永恒不变的方法是，<br>在命令行转到该执行文件所在的位置，然后键入该执行文件的名称，<br>但这个古老的方法现在却不能适用于PowerShell可执行脚本了。<br>如果你想执行一个PowerShell脚本，通常必须键入完整的路径和文件名，<br>例如，假设你要运行一个名为a.ps1的脚本，你可以键入：<br><code>C:\Scripts\aps1</code><br>最大的例外是，如果PowerShell脚本文件刚好位于你的系统目录中，<br>那么你可以直接在命令提示符后键入脚本文件名即可运行，如：<br><code>.\a.ps1</code> 注意前面需要加上<code>.\</code>，这和Linux下执行Shell脚本的方法如出一辙。</p>
 </li>
 <li><p>管道<br>管道的作用是将一个命令的输出作为另一个命令的输入，两个命令（或cmdlet）之间只需要用管道符号（<code>|</code>）连接即可。<br>为了帮助你了解管道是如何工作的，我们以一个例子进行说明，假设你想创建运行在服务器上的进程列表，并按进程的ID号进行排序，<br>可以使用<code>Get-Process</code> cmdlet命令获得进程列表，但默认情况下列表不会排序，<br>如果将这个cmdlet命令的输出用管道输送给<code>Sort-Object ID</code>命令，进程列表将会按进程ID号进行排序，如：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Process</span> | <span class="built_in">Sort-Object</span> ID</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Process</span> | <span class="built_in">Sort-Object</span> ID</span><br></pre></td></tr></table></figure></li>
 <li><p>变量<br>虽然可以使用管道将一个命令的输出输送给另一个命令，<br>但管道本身也是有限制的，当你用管道从一个命令向另一个命令传递输出结果时，输出结果立即被使用，<br>但有时候，你可能需要保存输出结果一段时间，以便以后可以使用（或重用），这个时候管道就应该下场，轮到变量上场了。<br>人们很容易将变量想象成一个仓库，但在PowerShell中，变量可以保存命令的完整输出，<br>例如，假设你想保存服务器处于运行中的进程列表，你可以将它赋给一个变量，如：<br><code>$a = Get-Process</code><br>在这里，变量被命名为$a，如果你想使用这个变量，只需要简单地调用它的名称即可，<br>例如，键入$a便可在屏幕上打印变量的内容。<br>你可以将多个用管道连接的命令的最终输出赋给一个变量，只需要用一对小括号将命令括起来即可，<br>例如，假设你想按进程ID对运行中的进程进行排序，然后将结果输出给一个变量，你可以使用下面这个命令：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = (<span class="built_in">Get-Process</span> | <span class="built_in">Sort-Object</span> ID)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>@符号<br>通过使用@符号，你可以将列表内容转换成一个数组，<br>例如，下面的代码创建了一个名为$Procs的变量，它包含多行文本内容（一个数组）：<br><code>$procs = @{name=&quot;explorer&quot;,&quot;svchost&quot;}</code><br>使用变量时你也可以使用@符号，为了确保它作为数组而不是单个值处理，<br>例如，下面的代码将在我前面定义的变量上运行<code>Get-Process</code> cmdlet命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = (<span class="built_in">Get-Process</span> | <span class="built_in">Sort-Object</span> ID)</span><br></pre></td></tr></table></figure></li>
+<li><p>@符号<br>通过使用@符号，你可以将列表内容转换成一个数组，<br>例如，下面的代码创建了一个名为$Procs的变量，它包含多行文本内容（一个数组）：<br><code>$procs = @&#123;name=&quot;explorer&quot;,&quot;svchost&quot;&#125;</code><br>使用变量时你也可以使用@符号，为了确保它作为数组而不是单个值处理，<br>例如，下面的代码将在我前面定义的变量上运行<code>Get-Process</code> cmdlet命令：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Process</span> @procsWindows</span><br></pre></td></tr></table></figure>
 <p>将显示Windows资源管理器和Svchost使用的所有进程，注意变量前使用的<code>@</code>符号，而不是常见的<code>$</code>符号。</p>
 </li>
 <li><p>Split<br>Split操作符根据你指定的字符拆分一个文本字符串，例如，假设你想将一个句子拆分成一个单词组成的一个数组，你可以使用下面的命令做到：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"This is a test"</span> -split <span class="string">" "</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;This is a test&quot;</span> <span class="operator">-split</span> <span class="string">&quot; &quot;</span></span><br></pre></td></tr></table></figure>
 <p>拆分后的结果如下：<br><code>This is a test</code></p>
 </li>
 <li><p>Join<br>就像Split可以将一个文本字符串拆分成多块一样，Join的操作则是逆向的，将多个独立的块连接成一个整体，<br>例如，下面这行代码将会创建一个文本字符串，由我的名字和姓氏组成：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"Brien"</span>,<span class="string">"Posey"</span> -join <span class="string">" "</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;Brien&quot;</span>,<span class="string">&quot;Posey&quot;</span> <span class="operator">-join</span> <span class="string">&quot; &quot;</span></span><br></pre></td></tr></table></figure>
 <p>命令末尾双引号之间的空格告诉Windows在两个文本字符串之间插入一个空格。</p>
 </li>
 <li><p>断点<br>运行一个新创建的PowerShell脚本时，如果脚本有Bug，会遇到意想不到的后果，<br>保护自己的一个方法是在脚本的关键位置插入断点，这样你就可以确保脚本正常运行先，然后再处理可能存在的问题。<br>插入断点最简单的方法是根据行号插入，例如，假设你要在第10行插入一个断点，可以使用下面的命令：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">New-PSBreakpoint -Script C:\Scripts\a.ps1 -Line <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你也可以将断点绑定到变量上，如果你希望你的脚本任何时候都可以修改a$的内容，可以使用下面的命令：</span></span><br><span class="line">New-PSBreakpoint -Script C:\scripts\a.ps1 -variables a </span><br><span class="line"><span class="comment">#注意，在变量名后并没有包括美元符号。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#可以和`PSBreakpoint`一起使用的动词包括`New`，`Get`，`Enable`，`Disable`和`Remove`。</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">New-PSBreakpoint</span> <span class="literal">-Script</span> C:\Scripts\a.ps1 <span class="literal">-Line</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你也可以将断点绑定到变量上，如果你希望你的脚本任何时候都可以修改a$的内容，可以使用下面的命令：</span></span><br><span class="line"><span class="built_in">New-PSBreakpoint</span> <span class="literal">-Script</span> C:\scripts\a.ps1 <span class="literal">-variables</span> a </span><br><span class="line"><span class="comment">#注意，在变量名后并没有包括美元符号。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#可以和`PSBreakpoint`一起使用的动词包括`New`，`Get`，`Enable`，`Disable`和`Remove`。</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <ol start="10">
 <li>Step<br>调试一个脚本时，有时可能需要逐行运行脚本，这时你可以使用<code>Step-Into</code> cmdlet命令，它会使脚本一行一行地执行，不管有没有设置断点，如果你想从这种步进式运行模式退出来，使用<code>Step-Out</code> cmdlet命令即可，<br>但需要注意的是，使用<code>Step-Out</code> cmdlet命令后，断点仍然有效。<br>顺便说一句，如果你的脚本使用了函数，你可能对<code>Step-Out</code> cmdlet更感兴趣，<code>Step-Out</code> 的工作方式和<code>Step-Into</code> 一样，不过，如果调用了一个函数，Windows不会逐步执行，整个函数将会一次性执行。</li>
@@ -470,7 +618,7 @@
 <p>.NET/.NET CORE编程, Registry, COM, WMI, ADSI. Exchange, Sharepoint,<br> Systems Center, Hyper-V, SQL. VMware vCenter, Cisco UCS,<br> Citrix XenApp and XenDesktop.，Azure, Excel 和 Office applications.<br> 基本上所有的微软产品都提供PowerShell接口。</p>
 </blockquote>
 <h4 id="1、管理进程"><a href="#1、管理进程" class="headerlink" title="1、管理进程"></a>1、管理进程</h4><p>前面已经提过管理系统进程的命令，管理进程常用命令就是<code>get-process</code>和<code>stop-process</code>，<code>get-process</code>获取进程之后可以直接用管道发送给<code>stop-process</code>结束进程。<br>比如，关闭打开的记事本，可以使用下面的命令很方便的关闭记事本。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">get-process</span> -Name notepad | <span class="built_in">stop-process</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">get-process</span> <span class="literal">-Name</span> notepad | <span class="built_in">stop-process</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="2、处理文件和文件夹"><a href="#2、处理文件和文件夹" class="headerlink" title="2、处理文件和文件夹"></a>2、处理文件和文件夹</h4><p>PowerShell使用<code>Get-ChildItem</code>获取文件夹中直接包含的所有项，<br>它有系统内置别名<code>dir</code>和<code>ls</code>，使用CMD和BASH的用户均可以轻松上手。<br>如果想查看<code>C:</code>中的文件夹和文件，直接使用<code>dir c:</code>，PowerShell立刻就会列出<code>C:</code>中的文件和文件夹。<br>其它处理文件和文件夹的命令有<code>Copy-Item</code>、<code>New-Item</code>、<code>Remove-Item</code>等，<br>具体用法可以使用<code>get-help</code>然后跟命令名称即可查询。</p>
 <h4 id="3、处理系统服务"><a href="#3、处理系统服务" class="headerlink" title="3、处理系统服务"></a>3、处理系统服务</h4><p>可以像管理进程一样管理系统服务，</p>
@@ -480,219 +628,188 @@
 <li><code>Start-Service</code>命令启动服务，</li>
 <li><code>Suspend-Service</code>命令挂起服务，</li>
 <li><code>Restart-Service</code>命令重启服务，</li>
-<li><code>Set-Service</code>服务设置服务属性。<br>如果想一次性启动已经停止的服务，可以使用以下命令：<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">get-service</span> | <span class="built_in">where-object</span> &#123;<span class="variable">$_</span>.Status <span class="nomarkup">-eq</span> <span class="string">"Stopped"</span>&#125; -exclude</span><br></pre></td></tr></table></figure></li>
-<li><em>下面这行命名会把除wisvc之外的命令都启动，这只是一个示例，不要在自己电脑使用，启动所有服务会消耗大量系统资源。*</em><br><code>wisvc | start-service</code></li>
+<li><code>Set-Service</code>服务设置服务属性。<br>如果想一次性启动已经停止的服务，可以使用以下命令：<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">get-service</span> | <span class="built_in">where-object</span> &#123;<span class="variable">$_</span>.Status <span class="operator">-eq</span> <span class="string">&quot;Stopped&quot;</span>&#125; <span class="literal">-exclude</span></span><br></pre></td></tr></table></figure></li>
+<li><em>下面这行命名会把除wisvc之外的命令都启动，这只是一个示例，不要在自己电脑使用，启动所有服务会消耗大量系统资源。</em>*<br><code>wisvc | start-service</code></li>
 </ul>
-<h4 id="4、处理注册表"><a href="#4、处理注册表" class="headerlink" title="4、处理注册表"></a>4、处理注册表</h4><p>PowerShell可以非常方便的处理注册表项目，<br>与进程和服务不同的是，PowerShell并未提供专用的注册表命令，而是使用处理文件和文件夹的命令，<br>这并不奇怪，PowerShell为用户提供了注册表驱动器，可以很好的处理注册表项目。<br>由于注册表对系统<strong>非常重要</strong>，<strong>错误处理注册表也许会导致系统出问题</strong>，
-处理注册表，特别是删除注册表项目要<strong>非常小心</strong>，
-最好能在处理注册表项目之前先<strong>备份</strong>要处理的项目。<strong>没有管理员权限也能处理部分注册表项目</strong>，
-这与regedit注册表编辑器不同，注册表编辑器必须使用管理员权限打开，然后才能操作项目。</p>
+<h4 id="4、处理注册表"><a href="#4、处理注册表" class="headerlink" title="4、处理注册表"></a>4、处理注册表</h4><p>PowerShell可以非常方便的处理注册表项目，<br>与进程和服务不同的是，PowerShell并未提供专用的注册表命令，而是使用处理文件和文件夹的命令，<br>这并不奇怪，PowerShell为用户提供了注册表驱动器，可以很好的处理注册表项目。<br>由于注册表对系统<strong>非常重要</strong>，<strong>错误处理注册表也许会导致系统出问题</strong>，<br>处理注册表，特别是删除注册表项目要<strong>非常小心</strong>，<br>最好能在处理注册表项目之前先<strong>备份</strong>要处理的项目。<strong>没有管理员权限也能处理部分注册表项目</strong>，<br>这与regedit注册表编辑器不同，注册表编辑器必须使用管理员权限打开，然后才能操作项目。</p>
 <h4 id="5、处理其它任务"><a href="#5、处理其它任务" class="headerlink" title="5、处理其它任务"></a>5、处理其它任务</h4><p>PowerShell还可以处理证书、防火墙、appx应用、打印机等任务，篇幅所限，不具体举例。大家可以使用get-command命令查找相关命令。</p>
 <h4 id="6、编写脚本程序"><a href="#6、编写脚本程序" class="headerlink" title="6、编写脚本程序"></a>6、编写脚本程序</h4><p>借助于.Net/.Net Core 实际上来说其他的编程语言能干什么，<br>PowerShell都可以做到，PowerShell能够充分利用.Net类型和COM对象，<br>来简单地与各种系统交互，完成各种复杂的、自动化的操作，因此PowerShell现在也是很不错的编程语言了，<br>有人还做出了ps1 to exe的脚本，可以将PowerShell编写的脚本文件编译成exe可执行文件。</p>
 <h2 id="一个有趣的例子"><a href="#一个有趣的例子" class="headerlink" title="一个有趣的例子"></a>一个有趣的例子</h2><p>这是PowerShell界常见的一段神代码，很多初学者被其带入了PowerShell的大门。<br>有效代码不过20来行，作用是把当前系统中最占内存的10个进程的数据发送到Excel中，并绘制成三维饼图。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建新的excel com对象</span></span><br><span class="line"><span class="variable">$objExcel</span> = <span class="built_in">New-Object</span> -comobject Excel.Application</span><br><span class="line"><span class="variable">$objExcel</span>.Visible = <span class="literal">$True</span></span><br><span class="line"><span class="variable">$objWorkbook</span> = <span class="variable">$objExcel</span>.Workbooks.Add()</span><br><span class="line"><span class="variable">$objWorksheet</span> = <span class="variable">$objWorkbook</span>.Worksheets.Item(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把信息写入excel</span></span><br><span class="line"><span class="variable">$i</span> = <span class="number">0</span></span><br><span class="line"><span class="variable">$first10</span> = (ps | sort ws -Descending | select -first <span class="number">10</span>)</span><br><span class="line"><span class="variable">$first10</span> | <span class="keyword">foreach</span> -Process &#123;<span class="variable">$i</span>++; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="variable">$i</span>,<span class="number">1</span>) = <span class="variable">$_</span>.name; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="variable">$i</span>,<span class="number">2</span>) = <span class="variable">$_</span>.ws&#125;</span><br><span class="line"><span class="variable">$otherMem</span> = (ps | measure ws -s).Sum - (<span class="variable">$first10</span> | measure ws -s).Sum</span><br><span class="line"><span class="variable">$objWorksheet</span>.Cells.Item(<span class="number">11</span>,<span class="number">1</span>) = <span class="string">"Others"</span>; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="number">11</span>,<span class="number">2</span>) = <span class="variable">$otherMem</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 画饼图</span></span><br><span class="line"><span class="variable">$objCharts</span> = <span class="variable">$objWorksheet</span>.ChartObjects()</span><br><span class="line"><span class="variable">$objChart</span> = <span class="variable">$objCharts</span>.Add(<span class="number">0</span>, <span class="number">0</span>, <span class="number">500</span>, <span class="number">300</span>)</span><br><span class="line"><span class="variable">$objChart</span>.Chart.SetSourceData(<span class="variable">$objWorksheet</span>.range(<span class="string">"A1:B11"</span>), <span class="number">2</span>)</span><br><span class="line"><span class="variable">$objChart</span>.Chart.ChartType = <span class="number">70</span></span><br><span class="line"><span class="variable">$objChart</span>.Chart.ApplyDataLabels(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#暂停</span></span><br><span class="line">pause</span><br><span class="line"><span class="variable">$objExcel</span>.Quit()</span><br><span class="line"><span class="variable">$objExcel</span> = <span class="literal">$null</span></span><br><span class="line">[GC]::Collect()</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建新的excel com对象</span></span><br><span class="line"><span class="variable">$objExcel</span> = <span class="built_in">New-Object</span> <span class="literal">-comobject</span> Excel.Application</span><br><span class="line"><span class="variable">$objExcel</span>.Visible = <span class="variable">$True</span></span><br><span class="line"><span class="variable">$objWorkbook</span> = <span class="variable">$objExcel</span>.Workbooks.Add()</span><br><span class="line"><span class="variable">$objWorksheet</span> = <span class="variable">$objWorkbook</span>.Worksheets.Item(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把信息写入excel</span></span><br><span class="line"><span class="variable">$i</span> = <span class="number">0</span></span><br><span class="line"><span class="variable">$first10</span> = (<span class="built_in">ps</span> | <span class="built_in">sort</span> ws <span class="literal">-Descending</span> | <span class="built_in">select</span> <span class="literal">-first</span> <span class="number">10</span>)</span><br><span class="line"><span class="variable">$first10</span> | <span class="keyword">foreach</span> <span class="literal">-Process</span> &#123;<span class="variable">$i</span>++; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="variable">$i</span>,<span class="number">1</span>) = <span class="variable">$_</span>.name; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="variable">$i</span>,<span class="number">2</span>) = <span class="variable">$_</span>.ws&#125;</span><br><span class="line"><span class="variable">$otherMem</span> = (<span class="built_in">ps</span> | <span class="built_in">measure</span> ws <span class="literal">-s</span>).Sum - (<span class="variable">$first10</span> | <span class="built_in">measure</span> ws <span class="literal">-s</span>).Sum</span><br><span class="line"><span class="variable">$objWorksheet</span>.Cells.Item(<span class="number">11</span>,<span class="number">1</span>) = <span class="string">&quot;Others&quot;</span>; <span class="variable">$objWorksheet</span>.Cells.Item(<span class="number">11</span>,<span class="number">2</span>) = <span class="variable">$otherMem</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 画饼图</span></span><br><span class="line"><span class="variable">$objCharts</span> = <span class="variable">$objWorksheet</span>.ChartObjects()</span><br><span class="line"><span class="variable">$objChart</span> = <span class="variable">$objCharts</span>.Add(<span class="number">0</span>, <span class="number">0</span>, <span class="number">500</span>, <span class="number">300</span>)</span><br><span class="line"><span class="variable">$objChart</span>.Chart.SetSourceData(<span class="variable">$objWorksheet</span>.range(<span class="string">&quot;A1:B11&quot;</span>), <span class="number">2</span>)</span><br><span class="line"><span class="variable">$objChart</span>.Chart.ChartType = <span class="number">70</span></span><br><span class="line"><span class="variable">$objChart</span>.Chart.ApplyDataLabels(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#暂停</span></span><br><span class="line">pause</span><br><span class="line"><span class="variable">$objExcel</span>.Quit()</span><br><span class="line"><span class="variable">$objExcel</span> = <span class="variable">$null</span></span><br><span class="line">[<span class="type">GC</span>]::Collect()</span><br></pre></td></tr></table></figure>
 
-<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果:"></a>执行结果:</h3><p><img src="https://cdn.jsdelivr.net/gh/lollipopnougat/website-calculator/img/screenshot.png" alt="执行结果"></p>
+<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果:"></a>执行结果:</h3><p><img src="https://cdn.jsdelivr.net/gh/lollipopnougat/website-calculator/img/screenshot.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/lollipopnougat/website-calculator/img/screenshot.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="执行结果"></p>
 
-          
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://www.lollipopnougat.top/2019/01/17/PowerShell%20(%E4%B8%80)/>https://www.lollipopnougat.top/2019/01/17/PowerShell%20(%E4%B8%80)/</a></p>
+              
+            
+          </blockquote>
         </div>
-        
-          <br>
-          
+      
+      
+    </div>
+  
+  
+    
 
 
-  <section class='meta' id="footer-meta">
+  <div class='article-meta' id="bottom">
     <div class='new-meta-box'>
       
         
-          
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-25T17:03:23+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年4月25日</p>
+  </a>
+</div>
 
         
       
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/PowerShell/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>PowerShell</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/PowerShell/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>PowerShell</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lollipopnougat.top/2019/01/17/PowerShell%20(%E4%B8%80)/&title=PowerShell (一) - LNP&summary=PowershellPowerShell 是一种命令行外壳程序和脚本环境，使命令行用户和脚本编写者可以方便地使用 .NET Framework的强大功能。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.lollipopnougat.top/2019/01/17/PowerShell%20(%E4%B8%80)/&title=PowerShell (一) - LNP&summary=PowershellPowerShell 是一种命令行外壳程序和脚本环境，使命令行用户和脚本编写者可以方便地使用 .NET Framework的强大功能。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lollipopnougat.top/2019/01/17/PowerShell%20(%E4%B8%80)/&title=PowerShell (一) - LNP&summary=PowershellPowerShell 是一种命令行外壳程序和脚本环境，使命令行用户和脚本编写者可以方便地使用 .NET Framework的强大功能。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
 
 
         
       
     </div>
-  </section>
+  </div>
 
 
-        
-        
-            <div class="prev-next">
-                
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                            <h4>
-                                <a href="/2019/01/25/HTML%20(%E4%B8%80)/" rel="prev" title="HTML (一)">
-                                  
-                                      HTML (一)
-                                  
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/HTML/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> HTML</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/2019/01/01/%E5%85%83%E6%97%A6%E5%BF%AB%E4%B9%90/" rel="prev" title="元旦快乐">
-                                    
-                                        元旦快乐
-                                    
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/%E8%8A%82%E6%97%A5%E7%A5%9D%E7%A6%8F/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 节日祝福</a> <a class="tag" href="/tags/%E5%85%83%E6%97%A6/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 元旦</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-            </div>
-        
-      </section>
-    </article>
+  
   
 
   
-    <!-- 显示推荐文章和评论 -->
+    <div class="prev-next">
+      
+        <a class='prev' href='/2019/01/25/HTML%20(%E4%B8%80)/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>HTML (一)</p>
+          <p class='content'>HTMLHTML 指超文本标记语言
+
+HTML 是通向 WEB 技术世界的钥匙。
 
 
 
-  <article class="post white-box comments  body-blur">
-    <section class="article typo">
-      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+简介HTML是现在世界通用的超文本标记语言，通过它，可以实现图片、链接、音乐以及程序等等多种元素。现如今，...</p>
+        </a>
       
       
+        <a class='next' href='/2019/01/01/%E5%85%83%E6%97%A6%E5%BF%AB%E4%B9%90/'>
+          <p class='title'>元旦快乐<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>2019元旦快乐
+
+相逢是首悠扬的歌，相识是杯醇香的酒，
+相处是那南飞的雁，相知是根古老的藤。
+健康是最佳的礼物，知足是最大的财富，
+信心是最可贵的品德，关心是最真挚的问候，
+牵挂是最无私的思念...</p>
+        </a>
       
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-spinner fa-spin fa-fw"></i>
-          </div>
-        </section>
-      
-    </section>
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow blur" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
   </article>
 
 
-  
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'PowerShell (一)',
-      tools: true
-    }
-  </script>
 
 
 </div>
 <aside class='l_side'>
   
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-
-<section class="widget grid  widget-blur desktop">
-  
-  <header>
-    
-      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>博客导航</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="grid navigation">
-      
-        <li><a class="flat-box" title="/" href="/"
-          
-          
-          id="home">
-          
-            <i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>
-          
-          近期消息
-        </a></li>
-      
-        <li><a class="flat-box" title="/archives/" href="/archives/"
-          
-          
-          id="archives">
-          
-            <i class="fas fa-file-archive fa-fw" aria-hidden="true"></i>
-          
-          消息归档
-        </a></li>
-      
-        <li><a class="flat-box" title="https://github.com/xaoxuu/hexo-theme-material-x/releases/" href="https://github.com/xaoxuu/hexo-theme-material-x/releases/"
-          
-            rel="external nofollow noopener noreferrer"
-          
-          
-            target="_blank"
-          
-          id="https:github.comxaoxuuhexo-theme-material-xreleases">
-          
-            <i class="fas fa-clipboard-list fa-fw" aria-hidden="true"></i>
-          
-          主题更新日志
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-      
-    
-      
-    
   
     
-      
-        
+    
 
-<section class="widget blogger  widget-blur desktop">
+<section class="widget blogger shadow blur desktop mobile">
   <div class='content'>
     
-      <div class='avatar'>
-        <img class='avatar' src='https://www.lollipopnougat.top/picbed/33110314.png'/>
-      </div>
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/lollipopnougat/picbed/33110314.png'/>
+        </a>
+      
     
     
       <div class='text'>
@@ -712,22 +829,25 @@
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
+              
             </a>
           
         
           
-            <a href="https://github.com/lollipopnougat"
+            <a href="https://github.com/lollipopnougat/"
               class="social fab fa-github flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
+              
             </a>
           
         
           
-            <a href="https://weibo.com/u/1949144895"
+            <a href="https://weibo.com/u/1949144895/"
               class="social fab fa-weibo flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
+              
             </a>
           
         
@@ -736,6 +856,7 @@
               class="social fab fa-zhihu flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
+              
             </a>
           
         
@@ -744,6 +865,7 @@
               class="social fas fa-music flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
+              
             </a>
           
         
@@ -752,31 +874,15 @@
   </div>
 </section>
 
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+  
+
   
     
-      
     
-      
-        
 
 
-  <section class="widget toc-wrapper  widget-blur desktop mobile">
+
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
     
   <header>
     
@@ -786,42 +892,122 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Powershell"><span class="toc-text">Powershell</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#受众"><span class="toc-text">受众</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新的脚本语言"><span class="toc-text">新的脚本语言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#因此PowerShell实际是一门独立的脚本语言了"><span class="toc-text">因此PowerShell实际是一门独立的脚本语言了</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PowerShell能干什么？"><span class="toc-text">PowerShell能干什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell的基本目标是使用户能够以交互方式或通过脚本更好、更容易地对系统进行管理控制，"><span class="toc-text">PowerShell的基本目标是使用户能够以交互方式或通过脚本更好、更容易地对系统进行管理控制，</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、管理进程"><span class="toc-text">1、管理进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、处理文件和文件夹"><span class="toc-text">2、处理文件和文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、处理系统服务"><span class="toc-text">3、处理系统服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、处理注册表"><span class="toc-text">4、处理注册表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、处理其它任务"><span class="toc-text">5、处理其它任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、编写脚本程序"><span class="toc-text">6、编写脚本程序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个有趣的例子"><span class="toc-text">一个有趣的例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行结果"><span class="toc-text">执行结果:</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Powershell"><span class="toc-text">Powershell</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%97%E4%BC%97"><span class="toc-text">受众</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80"><span class="toc-text">新的脚本语言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E6%AD%A4PowerShell%E5%AE%9E%E9%99%85%E6%98%AF%E4%B8%80%E9%97%A8%E7%8B%AC%E7%AB%8B%E7%9A%84%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E4%BA%86"><span class="toc-text">因此PowerShell实际是一门独立的脚本语言了</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PowerShell%E8%83%BD%E5%B9%B2%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">PowerShell能干什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9B%AE%E6%A0%87%E6%98%AF%E4%BD%BF%E7%94%A8%E6%88%B7%E8%83%BD%E5%A4%9F%E4%BB%A5%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%88%96%E9%80%9A%E8%BF%87%E8%84%9A%E6%9C%AC%E6%9B%B4%E5%A5%BD%E3%80%81%E6%9B%B4%E5%AE%B9%E6%98%93%E5%9C%B0%E5%AF%B9%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%8E%A7%E5%88%B6%EF%BC%8C"><span class="toc-text">PowerShell的基本目标是使用户能够以交互方式或通过脚本更好、更容易地对系统进行管理控制，</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B"><span class="toc-text">1、管理进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">2、处理文件和文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="toc-text">3、处理系统服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E5%A4%84%E7%90%86%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="toc-text">4、处理注册表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E3%80%81%E5%A4%84%E7%90%86%E5%85%B6%E5%AE%83%E4%BB%BB%E5%8A%A1"><span class="toc-text">5、处理其它任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%E3%80%81%E7%BC%96%E5%86%99%E8%84%9A%E6%9C%AC%E7%A8%8B%E5%BA%8F"><span class="toc-text">6、编写脚本程序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">一个有趣的例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">执行结果:</span></a></li></ol>
     </div>
   </section>
 
 
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-      
-    
-      
-    
-      
-    
-      
-        
   
 
-  <section class="widget tagcloud  widget-blur desktop">
+  
+    
+    
+  
+
+  <section class="widget category shadow blur desktop">
     
   <header>
     
-      <a href='blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%89%8D%E7%AB%AF/" href="/categories/%E5%89%8D%E7%AB%AF/"
+            id="categoriesE5898DE7ABAF"
+            ><div class='name'>前端</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%89%8D%E7%AB%AF/HTML/" href="/categories/%E5%89%8D%E7%AB%AF/HTML/"
+            id="categoriesE5898DE7ABAFHTML"
+            ><div class='name'>HTML</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%89%8D%E7%AB%AF/vue/" href="/categories/%E5%89%8D%E7%AB%AF/vue/"
+            id="categoriesE5898DE7ABAFvue"
+            ><div class='name'>vue</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%90%8E%E7%AB%AF/" href="/categories/%E5%90%8E%E7%AB%AF/"
+            id="categoriesE5908EE7ABAF"
+            ><div class='name'>后端</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%90%8E%E7%AB%AF/Nodejs/" href="/categories/%E5%90%8E%E7%AB%AF/Nodejs/"
+            id="categoriesE5908EE7ABAFNodejs"
+            ><div class='name'>Nodejs</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%90%90%E6%A7%BD/" href="/categories/%E5%90%90%E6%A7%BD/"
+            id="categoriesE59090E6A7BD"
+            ><div class='name'>吐槽</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91/" href="/categories/%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91/"
+            id="categoriesE788ACE899ABE5BC80E58F91"
+            ><div class='name'>爬虫开发</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91/python/" href="/categories/%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91/python/"
+            id="categoriesE788ACE899ABE5BC80E58F91python"
+            ><div class='name'>python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"
+            id="categoriesE7BC96E7A88BE8AFADE8A880"
+            ><div class='name'>编程语言</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/PowerShell/" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/PowerShell/"
+            id="categoriesE7BC96E7A88BE8AFADE8A880PowerShell"
+            ><div class='name'>PowerShell</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/"
+            id="categoriesE7BC96E7A88BE8AFADE8A880Python"
+            ><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E8%8A%82%E6%97%A5%E7%A5%9D%E7%A6%8F/" href="/categories/%E8%8A%82%E6%97%A5%E7%A5%9D%E7%A6%8F/"
+            id="categoriesE88A82E697A5E7A59DE7A68F"
+            ><div class='name'>节日祝福</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E8%8A%82%E6%97%A5%E7%A5%9D%E7%A6%8F/%E5%85%83%E6%97%A6/" href="/categories/%E8%8A%82%E6%97%A5%E7%A5%9D%E7%A6%8F/%E5%85%83%E6%97%A6/"
+            id="categoriesE88A82E697A5E7A59DE7A68FE58583E697A6"
+            ><div class='name'>元旦</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E8%8A%82%E6%97%A5%E7%A5%9D%E7%A6%8F/%E6%98%A5%E8%8A%82/" href="/categories/%E8%8A%82%E6%97%A5%E7%A5%9D%E7%A6%8F/%E6%98%A5%E8%8A%82/"
+            id="categoriesE88A82E697A5E7A59DE7A68FE698A5E88A82"
+            ><div class='name'>春节</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" href="/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+            id="categoriesE99DA2E59091E5AFB9E8B1A1"
+            ><div class='name'>面向对象</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow blur desktop mobile">
+    
+  <header>
+    
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
     
   </header>
 
@@ -832,70 +1018,47 @@
   </section>
 
 
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
   
+
+
 </aside>
 
-<footer class="clearfix white">
-  <br><br>
+
+
+		  
+		  <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="PowerShell (一)";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  // header 这里无论是否开启pjax都需要
+  var l_header=document.getElementById("l_header");
   
-    <div class="social-wrapper">
-      
-        
-          <a href="mailto:ab2defg145@126.com"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://github.com/lollipopnougat"
-            class="social fab fa-github flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://weibo.com/u/1949144895"
-            class="social fab fa-weibo flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/SDSR/activities"
-            class="social fab fa-zhihu flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
-          <a href="https://music.163.com/#/user/home?id=505951930"
-            class="social fas fa-music flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-    </div>
+  l_header.classList.add("show");
   
   
-    <br>
-    <div class="aplayer-container">
+    // cover
+    var cover_wrapper=document.querySelector('.cover-wrapper');
+    
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
+    
+  
+</script>
+
+        </div>
+        
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
       
+        <div class="aplayer-container">
+          
 
   
     <meting-js
@@ -905,129 +1068,792 @@
       loop='all'
       order='list'
       fixed='false'
-      list-max-height='340px'
+      list-max-height='320px'
       server='netease'
       type='playlist'
-      id='2579535954'
+      id='6728766525'
       list-folded='true'>
     </meting-js>
   
 
 
-    </div>
-  
-  <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:ab2defg145@126.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/lollipopnougat/"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://weibo.com/u/1949144895/"
+                class="social fab fa-weibo flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://www.zhihu.com/people/SDSR/activities"
+                class="social fab fa-zhihu flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=505951930"
+                class="social fas fa-music flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
-  <div>
-    本站使用
-    <a href="https://xaoxuu.com/wiki/volantis/" target="_blank" class="codename">Volantis</a>
-    作为主题
+      
     
-      ，
-      总访问量为
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      次
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
     
-    。
-  </div>
-  
-</footer>
-<script>setLoadingBarProgress(80);</script>
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2018-2021 lollipopnougat</a></p>
+
+        </div>
+      
+    
+  </footer>
 
 
-      <script>setLoadingBarProgress(60);</script>
+        <a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+      </div>
     </div>
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
-  </div>
+    <div>
+      <script>
+/************这个文件存放不需要重载的全局变量和全局函数*********/
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/******************** Pjax ********************************/
+function VPjax(){
+	this.list=[] // 存放回调函数
+	this.start=()=>{
+	  for(var i=0;i<this.list.length;i++){
+		this.list[i].run();
+	  }
+	}
+	this.push=(fn,name)=>{
+		var f=new PjaxItem(fn,name);
+		this.list.push(f);
+	}
+	// 构造一个可以run的对象
+	function PjaxItem(fn,name){
+		// 函数名称
+		this.name = name || fn.name
+		// run方法
+		this.run=()=>{
+			fn()
+		}
+	}
+}
+volantis.pjax={}
+volantis.pjax.method={
+	complete: new VPjax(),
+	error: new VPjax(),
+	send: new VPjax()
+}
+volantis.pjax={
+	...volantis.pjax,
+	push: volantis.pjax.method.complete.push,
+	error: volantis.pjax.method.error.push,
+	send: volantis.pjax.method.send.push
+}
+/********************脚本懒加载函数********************************/
+// 已经加入了setTimeout
+function loadScript(src, cb) {
+	setTimeout(function() {
+		var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+		var script = document.createElement('script');
+		script.setAttribute('type','text/javascript');
+		if (cb) script.onload = cb;
+		script.setAttribute('src', src);
+		HEAD.appendChild(script);
+	});
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
   
-<script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+  function Pjax_SCload_fancybox(){
+	if (typeof $.fancybox == "undefined") {
+	 SCload_fancybox();
+    } else {
+	 pjax_fancybox();
+    }
+  }
+  volantis.pjax.push(Pjax_SCload_fancybox)
+  volantis.pjax.send(()=>{
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+  },'fancybox')
+</script>
 
 
-  <script>
+<!-- internal -->
+
+  
+  
+  
     
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/" || "/";
-    if (!ROOT.endsWith('/')) ROOT += '/';
-  </script>
-
-
-  <script async src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
-  <script async src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
-
-
-
-
-  <script async src="//cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
-
-
-
-  
-  
-  
-    
-<script src="//cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-      $(function(){
-        if ('') {
-          $('').backstretch(
-          ["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/AEB33F9D-7294-4CF1-B8C5-3020748A9D45.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/2884F904-F1F3-479E-AE27-5EBC291B63B0.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/10A0FCE5-36A1-4AD0-8CF0-019259A89E03.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/250662D4-5A21-4AAA-BB63-CD25CF97CFF1.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/298468D7-E388-44A8-8CC5-8213BDC33CED.jpeg"],
-          {
-            duration: "10000",
-            fade: "2500"
-          });
-        } else {
-          $.backstretch(
-          ["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/AEB33F9D-7294-4CF1-B8C5-3020748A9D45.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/2884F904-F1F3-479E-AE27-5EBC291B63B0.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/10A0FCE5-36A1-4AD0-8CF0-019259A89E03.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/250662D4-5A21-4AAA-BB63-CD25CF97CFF1.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/landscape/298468D7-E388-44A8-8CC5-8213BDC33CED.jpeg"],
-          {
-            duration: "10000",
-            fade: "2500"
-          });
+        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
         }
-      });
+	  function Pjax_backstretch(){
+        
+          $.backstretch(
+            imgs,
+          {
+            duration: "10000",
+            fade: "2500"
+          });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
 
 
+  
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>复制文本</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
+        <hr id='hr-src'>
+      </li>
+      
+        <li class='navigation'>
+          <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+        </li>
+      
+      <hr>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' href=https://github.com/lollipopnougat/lollipopnougat.github.io/
+        
+        
+        
+        
+          id="https:githubcomlollipopnougatlollipopnougatgithubio"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default toggle-mode-btn' 
+        
+        
+        
+        >
+        <i class='fas fa-moon fa-fw'></i> Dark mode
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title fix-cursor-default'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('true' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+      // 有音乐播放器 see: layout/_third-party/aplayer/script.ejs
+      
+      if(volantis.APlayerLoaded){ // APlayer加载完成？
+        // 如果有aplayer，初始化一下
+        checkAPlayer();
+      }
+      
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
 
 
+
+
+<script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+	
+	  loadScript('/js/issues.js');
+	
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  volantis.pjax.push(()=>{
+	if (typeof IssuesAPI == "undefined") {
+	  loadIssuesJS();
+	}
+  },"IssuesJS")
+</script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
 
 
 
 
   
-    
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: [],
+	maxRPS: 5,
+	hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+	volantis.pjax.push(pjax_initCopyCode)
+</script>
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '6728766525';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+  // APlayer 需要在  MetingJS 之前加载
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+  window.volantis.APlayerLoaded=0 // APlayer加载完成状态
+  var checkAPlayer = setInterval(function () {
+    if (!window.APlayer) return // APlayer加载完成？
+	  if ($("#safearea").css("display")!="block") return // 文章内容加载完成？ see: source/css/first.styl
+    clearInterval(checkAPlayer)
+	  if (!window.volantis.APlayerLoaded&&!window.MetingJSElement){ // APlayer只能加载一次
+      window.volantis.APlayerLoaded=1 // APlayer加载完成
+      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
+	  }
+  }, 2500) // 按照网速调节差分2.5s
+  // rightmenu see: layout/_partial/rightmenu.ejs
+
+  
+    loadScript("/js/aplayer.js")
+  
+
+</script>
+
+
+
+
+  
+  
 <script src="/js/valine.js"></script>
 
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
+
+<script>
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+    var valine = new Valine();
+    valine.init(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"pexXNosfrdkaSXNiev7EMXs8-gzGzoHsz","appKey":"yIuA205Vt21KbLTH3nmmGVj2","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
+      el: '#valine_container',
+      path: path,
+      placeholder: pagePlaceholder,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps,
+    }))
+  }
+  $(function () {
+    pjax_valine();
   });
-  var notify = 'true' == true;
-  var verify = 'true' == true;
-  var valine = new Valine();
-  valine.init({
-    el: '#valine_container',
-    notify: notify,
-    verify: verify,
-    guest_info: guest_info,
-    
-    appId: "pexXNosfrdkaSXNiev7EMXs8-gzGzoHsz",
-    appKey: "yIuA205Vt21KbLTH3nmmGVj2",
-    placeholder: "快来评论吧~",
-    pageSize:'10',
-    avatar:'mp',
-    lang:'zh-cn',
-    highlight:'true'
-  })
-  </script>
+  volantis.pjax.push(pjax_valine);
+</script>
+
+
+
 
 
 
@@ -1036,131 +1862,530 @@
 
 
 
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('/js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
   
-<script src="/js/search.js"></script>
-
-
-
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
   
-<script src="//cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@20.2.33/js/comment_typing.js"></script>
-
-
-
-<!-- 夝制 -->
-
-  <script src="//cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  let COPY_SUCCESS = "复制成功";
-  let COPY_FAILURE = "复制失败";
-  /*页面载入完成后，创建复制按钮*/
-  !function (e, t, a) {
-    /* code */
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        //您可以加入成功提示
-        console.info('Action:', e.action);
-        console.info('Text:', e.text);
-        console.info('Trigger:', e.trigger);
-        success_prompt(COPY_SUCCESS);
-        e.clearSelection();
-      });
-      clipboard.on('error', function(e) {
-        //您可以加入失败提示
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-        fail_prompt(COPY_FAILURE);
-      });
-    }
-    initCopyCode();
-
-  }(window, document);
-
-  /**
-   * 弹出式提示框，默认1.5秒自动消失
-   * @param message 提示信息
-   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
-   * @param time 消失时间
-   */
-  var prompt = function (message, style, time)
-  {
-      style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
-      $('<div>')
-          .appendTo('body')
-          .addClass('alert ' + style)
-          .html(message)
-          .show()
-          .delay(time)
-          .fadeOut();
-  };
-
-  // 成功提示
-  var success_prompt = function(message, time)
-  {
-      prompt(message, 'alert-success', time);
-  };
-
-  // 失败提示
-  var fail_prompt = function(message, time)
-  {
-      prompt(message, 'alert-danger', time);
-  };
-
-  // 提醒
-  var warning_prompt = function(message, time)
-  {
-      prompt(message, 'alert-warning', time);
-  };
-
-  // 信息提示
-  var info_prompt = function(message, time)
-  {
-      prompt(message, 'alert-info', time);
-  };
-
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
 </script>
 
 
 
 
-<!-- fancybox -->
 
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  let LAZY_LOAD_IMAGE = "";
-  $(".article-entry").find("fancybox").find("img").each(function () {
-      var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      /* 图片采用懒加载处理时,
-       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-       * 那么此处将原本的属性名src替换为对应属性名data-original,
-       * 修改如下
-       */
-       if (LAZY_LOAD_IMAGE) {
-         $(element).attr("href", $(this).attr("data-original"));
-       }
-      $(this).wrap(element);
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+<script type="text/javascript">
+$(function () {
+  Waves.attach('.flat-btn', ['waves-button']);
+  Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+  Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+  Waves.attach('.flat-box', ['waves-block']);
+  Waves.attach('.float-box', ['waves-block', 'waves-float']);
+  Waves.attach('.waves-image');
+  Waves.init();
+});
+</script>
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://www.lollipopnougat.top' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://www.lollipopnougat.top' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://www.lollipopnougat.top' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
   });
 </script>
 
 
 
 
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+    localStorage.setItem(k, v);
+};
+
+const removeLS = (k) => {
+    localStorage.removeItem(k);
+};
+
+const getLS = (k) => {
+    return localStorage.getItem(k);
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+var btn=$("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn");
+function bindToggleButton() {
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+volantis.pjax.push(bindToggleButton);
+volantis.pjax.send(()=>{
+	btn.unbind('click');
+},'toggle-mode-btn-unbind');
+</script>
 
 
 
-  <script>setLoadingBarProgress(100);</script>
-</body>
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+  
+  <script>var _hmt=_hmt||[];(function(){var hm= document.createElement("script");hm.src="https://hm.baidu.com/hm.js?807dea1b95e976be1d57d805f0c9a338";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
+
+
+
+ 
+	   
+	    
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+	  volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+		// 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+		volantis.pjax.method.complete.start();
+      } catch (e) {
+        console.log(e);
+      }
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+	  volantis.pjax.method.error.start();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+ 
+	  
+    </div>
+  </body>
 </html>
