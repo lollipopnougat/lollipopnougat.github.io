@@ -3,6 +3,41 @@
 
 
     <url>
+        <loc>https://www.lollipopnougat.top/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/</loc>
+        <lastmod>2021-08-14T11:21:18.982Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.lollipopnougat.top/tags/win32/</loc>
+        <lastmod>2021-08-14T11:21:18.982Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.lollipopnougat.top/tags/%E7%88%AC%E8%99%AB/</loc>
+        <lastmod>2021-08-14T10:04:49.498Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.lollipopnougat.top/tags/python/</loc>
+        <lastmod>2021-08-14T10:04:49.498Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.lollipopnougat.top/tags/pip/</loc>
+        <lastmod>2021-08-14T10:04:22.667Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.lollipopnougat.top/tags/PowerShell/</loc>
         <lastmod>2021-04-26T07:44:20.276Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -82,27 +117,6 @@
     <url>
         <loc>https://www.lollipopnougat.top/tags/Vue-js/</loc>
         <lastmod>2021-04-26T07:25:15.857Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.lollipopnougat.top/tags/%E7%88%AC%E8%99%AB/</loc>
-        <lastmod>2021-04-25T15:41:12.057Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.lollipopnougat.top/tags/python/</loc>
-        <lastmod>2021-04-25T15:41:12.057Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.lollipopnougat.top/tags/pip/</loc>
-        <lastmod>2021-04-25T15:29:16.354Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
